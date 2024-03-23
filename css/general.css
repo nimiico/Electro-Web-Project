@@ -52,8 +52,8 @@ body {
 }
 
 .heading-primary,
-.heading-secondary,
-.heading-tertiary {
+.Header-4-Bold,
+.Body-1-Bold {
   font-weight: 700;
   color: #101316;
   letter-spacing: -0.5px;
@@ -65,15 +65,19 @@ body {
   margin-bottom: 3.2rem;
 }
 
-.heading-secondary {
+.Header-4-Bold {
   font-size: 3rem;
   line-height: 1.4;
-  margin-bottom: 5rem;
 }
 
-.heading-tertiary {
+.Body-1-Bold {
   font-size: 1.6rem;
   line-height: 1.875;
+}
+
+.Header-7-Regular {
+  font-size: 1.8rem;
+  line-height: 1.66;
 }
 
 .btn:link,

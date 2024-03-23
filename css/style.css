@@ -70,7 +70,7 @@
 /************************/
 .section-hero {
   background-color: rgba(255, 255, 255, 10%);
-  padding: 1rem 0;
+  margin-bottom: 10rem;
 }
 
 .hero {
@@ -88,7 +88,7 @@
   font-weight: 400;
   line-height: 1.66;
   color: #101316;
-  margin-bottom: 4.8rem;
+  margin-bottom: 6.4rem;
 }
 
 .hero-img {
@@ -99,7 +99,11 @@
 /* CATEGORIES */
 /************************/
 .section-categories {
-  padding: 10rem 0;
+  margin-bottom: 10rem;
+}
+
+.categories-title {
+  margin-bottom: 5rem;
 }
 
 .cat-img-box {
@@ -132,4 +136,48 @@
 
 .cat-img {
   width: 64%;
+}
+
+/************************/
+/* SECTION-OFF */
+/************************/
+.section-off {
+  margin-bottom: 10rem;
+}
+
+.off-post {
+  display: flex;
+  background-color: #a5a9ac1a;
+}
+
+.post-content {
+  padding: 3rem 0 5rem 3rem;
+}
+
+.tag {
+  padding: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.66;
+  background-color: #1c4e8e1a;
+  border-radius: 5px;
+  color: #1c4e8e;
+}
+
+.post-title {
+  margin: 1.2rem 0;
+}
+
+.post-description {
+  margin-bottom: 5rem;
+}
+
+.post-img-box {
+  display: flex;
+  align-self: flex-end;
+  width: 44%;
+  height: auto;
+}
+
+.post-img {
+  width: 100%;
 }

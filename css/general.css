@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+/************************/
+/* GENERAL*/
+/************************/
+.container {
+  max-width: 144rem;
+  padding: 0 15rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  column-gap: 3rem;
+  row-gap: 2rem;
+  /* margin-bottom: 9.6rem; */
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--6-cols {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: #101316;
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 8rem;
+  line-height: 1.375;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  line-height: 1.4;
+  margin-bottom: 5rem;
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  line-height: 1.875;
+}
+
+.btn:link,
+.btn:visited {
+  background-color: #1c4e8e;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  padding: 2rem;
+  border-radius: 15px;
+
+  transition: background-color 0.3s;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #163b6b;
+  color: #fff;
+}

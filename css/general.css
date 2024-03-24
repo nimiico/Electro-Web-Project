@@ -56,7 +56,9 @@ body {
 /************************/
 
 .heading-primary,
+.Header-3-Bold,
 .Header-4-Bold,
+.Header-7-Bold,
 .Body-1-Bold {
   font-weight: 700;
   color: #101316;
@@ -77,9 +79,19 @@ body {
   margin-bottom: 3.2rem;
 }
 
+.Header-3-Bold {
+  font-size: 4rem;
+  line-height: 1.4;
+}
+
 .Header-4-Bold {
   font-size: 3rem;
   line-height: 1.4;
+}
+
+.Header-7-Bold {
+  font-size: 1.8rem;
+  line-height: 1.66;
 }
 
 .Body-1-Bold {

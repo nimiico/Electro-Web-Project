@@ -51,12 +51,24 @@ body {
   grid-template-columns: repeat(6, 1fr);
 }
 
+/************************/
+/* TYPOGRAPHY*/
+/************************/
+
 .heading-primary,
 .Header-4-Bold,
 .Body-1-Bold {
   font-weight: 700;
   color: #101316;
   letter-spacing: -0.5px;
+}
+
+.Header-4-Regular,
+.Header-6-Regular,
+.Header-7-Regular,
+.Body-1-Regular {
+  font-weight: 400;
+  color: #101316;
 }
 
 .heading-primary {
@@ -80,6 +92,21 @@ body {
   line-height: 1.66;
 }
 
+.Header-6-Regular {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.Header-4-Regular {
+  font-size: 3rem;
+  line-height: 1.4;
+}
+
+.Body-1-Regular {
+  font-size: 1.6rem;
+  line-height: 1.875be;
+}
+
 .btn:link,
 .btn:visited {
   background-color: #1c4e8e;
@@ -98,4 +125,16 @@ body {
 .btn:active {
   background-color: #163b6b;
   color: #fff;
+}
+
+.option-items {
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.option-items:hover,
+.option-items:active {
+  border-bottom: 1px solid #1c4e8e;
+  color: #1c4e8e;
+  cursor: pointer;
 }

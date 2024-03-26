@@ -13,34 +13,70 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/queries.css" />
 
     <title>Electro</title>
   </head>
   <body>
-    <header class="container header">
-      <section class="header-first-row">
-        <img src="img/Group 427319094.png" alt="Electro Logo" class="Logo" />
-        <div class="header-search-box">search</div>
-        <div class="header-icon-box">icon</div>
-      </section>
-      <section class="header-second-row">
-        <div class="header-categories">All Categories</div>
-        <nav class="main-nav">
-          <ul class="main-nav-list">
-            <li><a class="main-nav-link" href="#">Section 1</a></li>
-            <li>
-              <select name="Shop" id="Shop" class="nav-shop">
-                <option value="Shop">
-                  <a href="#">Shop</a>
-                </option>
-              </select>
-            </li>
-            <li><a class="main-nav-link" href="#">Section 3</a></li>
-            <li><a class="main-nav-link" href="#">Section 4</a></li>
-            <li><a class="main-nav-link" href="#">Section 5</a></li>
-          </ul>
-        </nav>
-      </section>
+    <header class="header">
+      <div class="container header-container">
+        <div class="header-first-row">
+          <img src="img/Group 427319094.png" alt="Electro Logo" class="Logo" />
+          <div class="header-search-box">
+            <select name="all" id="all" class="all-select Body-1-Regular">
+              <option value="All">
+                <a href="#">All</a>
+              </option>
+            </select>
+            <div class="search-input-box">
+              <ion-icon name="search-outline"></ion-icon>
+              <input
+                class="search-input Body-1-Regular"
+                type="text"
+                placeholder="Search"
+              />
+            </div>
+            <button class="search-btn action-btn Body-1-Regular">Search</button>
+          </div>
+          <div class="header-icon-container">
+            <div class="header-icon-box">
+              <ion-icon name="search-outline"></ion-icon>
+              <ion-icon name="heart-outline"></ion-icon>
+              <ion-icon name="cart-outline"></ion-icon>
+            </div>
+            <button class="login-btn action-btn Body-1-Regular">Login</button>
+          </div>
+        </div>
+        <div class="header-second-row">
+          <div class="header-categories">
+            <ion-icon name="menu-outline"></ion-icon>
+            <select
+              name="Categories"
+              id="Categories"
+              class="categories-select Body-1-Regular"
+            >
+              <option value="All Categories">
+                <a href="#">All Categories</a>
+              </option>
+            </select>
+          </div>
+          <nav class="main-nav">
+            <ul class="main-nav-list">
+              <li><a class="main-nav-link" href="#">Home</a></li>
+              <li>
+                <select name="Shop" id="Shop" class="nav-shop">
+                  <option value="Shop">
+                    <a href="#">Shop</a>
+                  </option>
+                </select>
+              </li>
+              <li><a class="main-nav-link" href="#">About Us</a></li>
+              <li><a class="main-nav-link" href="#">Blog</a></li>
+              <li><a class="main-nav-link" href="#">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </header>
     <main>
       <section class="section-hero">
@@ -743,141 +779,69 @@
           <a href="#" class="btn">Shop Now &rarr;</a>
         </div>
       </section>
-      <section class="section-bestseller">
-        <div class="container bestseller-title-box">
-          <h4 class="bestseller Header-4-Bold">Our Bestseller Products</h4>
-          <div class="tab-heading-container">
-            <h6 class="tab-heading Header-6-Regular active">New</h6>
-            <h6 class="tab-heading Header-6-Regular">Featured</h6>
-            <h6 class="tab-heading Header-6-Regular">Top Rated</h6>
+      <section class="section-topseller">
+        <div class="container topseller-title-box">
+          <h4 class="topseller Header-4-Bold">Our Bestseller Products</h4>
+          <div class="topseller-tab-heading-container">
+            <h6 class="topseller-tab-heading Header-6-Regular active">New</h6>
+            <h6 class="topseller-tab-heading Header-6-Regular">Featured</h6>
+            <h6 class="topseller-tab-heading Header-6-Regular">Top Rated</h6>
           </div>
         </div>
         <div class="container">
-          <div class="tab-content-container">
-            <div class="tab-content active">
+          <div class="topseller-tab-content-container">
+            <div class="topseller-tab-content active">
               <div class="gallery">
                 <figure class="gallery-item el--1">
                   <h4 class="Header-4-Bold">Apple iPad Pro Wi-Fi</h4>
                   <p class="Header-4-Regular">$1520</p>
-                  <img src="img/PngItem_1757515 1.png" alt="ipad" />
+                  <img src="img/image 32.png" alt="ipad" />
                 </figure>
                 <div class="post-item">
                   <figure class="gallery-item">
-                    <img src="img/image 19.png" alt="Apple iPad Mini 6 Wi-Fi" />
+                    <img src="img/image 24.png" alt="Apple iPad Mini 6 Wi-Fi" />
                   </figure>
-                  <p class="Body-1-Bold">Apple iPad Mini 6 Wi-Fi</p>
+                  <p class="Body-1-Bold">Panasonic Lumix DC-GH5 II</p>
                   <img
                     src="img/Frame 1000001161.png"
                     alt="star"
                     class="star-img"
                   />
-                  <p class="Body-1-Regular">$500.00</p>
+                  <p class="Body-1-Regular">$1500.00</p>
                 </div>
 
                 <div class="post-item">
                   <figure class="gallery-item">
-                    <img src="img/image 20.png" alt="Microsoft Surface Go" />
+                    <img src="img/image 25.png" alt="Microsoft Surface Go" />
                   </figure>
-                  <p class="Body-1-Bold">Microsoft Surface Go</p>
+                  <p class="Body-1-Bold">Asus ROG Delta S</p>
                   <img
                     src="img/Frame 1000001161.png"
                     alt="star"
                     class="star-img"
                   />
-                  <p class="Body-1-Regular">$399.00</p>
+                  <p class="Body-1-Regular">$250.00</p>
                 </div>
                 <div class="post-item">
                   <figure class="gallery-item">
-                    <img src="img/image 21.png" alt="LG 4K Ultra UHD TV" />
+                    <img src="img/image 26.png" alt="LG 4K Ultra UHD TV" />
                   </figure>
-                  <p class="Body-1-Bold">LG 4K Ultra UHD TV</p>
+                  <p class="Body-1-Bold">Xiaomi Fimi X8 Mini</p>
                   <img
                     src="img/Frame 1000001161.png"
                     alt="star"
                     class="star-img"
                   />
-                  <p class="Body-1-Regular">$5500.00</p>
-                </div>
-                <div class="post-item">
-                  <figure class="gallery-item">
-                    <img
-                      src="img/image 18.png"
-                      alt="Samsung Galaxy S22 Ultra"
-                    />
-                  </figure>
-                  <p class="Body-1-Bold">Samsung Galaxy S22 Ultra</p>
-                  <img
-                    src="img/Frame 1000001161.png"
-                    alt="star"
-                    class="star-img"
-                  />
-                  <p class="Body-1-Regular">$1350.00</p>
-                </div>
-                <div class="post-item">
-                  <figure class="gallery-item">
-                    <img src="img/image 22.png" alt="Apple iPhone 14 Plus" />
-                  </figure>
-                  <p class="Body-1-Bold">Apple iPhone 14 Plus</p>
-                  <img
-                    src="img/Frame 1000001161.png"
-                    alt="star"
-                    class="star-img"
-                  />
-                  <p class="Body-1-Regular">$850.00</p>
-                </div>
-                <div class="post-item">
-                  <figure class="gallery-item">
-                    <img src="img/image 17.png" alt="Bose QuietComfort 45" />
-                  </figure>
-                  <p class="Body-1-Bold">Bose QuietComfort 45</p>
-                  <img
-                    src="img/Frame 1000001161.png"
-                    alt="star"
-                    class="star-img"
-                  />
-                  <p class="Body-1-Regular">$300.00</p>
-                </div>
-              </div>
-            </div>
-            <div class="tab-content">
-              <div class="gallery">
-                <figure class="gallery-item el--1">
-                  <h4 class="Header-4-Bold">Apple iPad Pro Wi-Fi</h4>
-                  <p class="Header-4-Regular">$1520</p>
-                  <img src="img/PngItem_1757515 1.png" alt="ipad" />
-                </figure>
-                <div class="post-item">
-                  <figure class="gallery-item">
-                    <img src="img/image 17.png" alt="Bose QuietComfort 45" />
-                  </figure>
-                  <p class="Body-1-Bold">Bose QuietComfort 45</p>
-                  <img
-                    src="img/Frame 1000001161.png"
-                    alt="star"
-                    class="star-img"
-                  />
-                  <p class="Body-1-Regular">$300.00</p>
+                  <p class="Body-1-Regular">$650.00</p>
                 </div>
                 <div class="post-item">
                   <figure class="gallery-item">
                     <img
-                      src="img/image 18.png"
+                      src="img/image 27.png"
                       alt="Samsung Galaxy S22 Ultra"
                     />
                   </figure>
-                  <p class="Body-1-Bold">Samsung Galaxy S22 Ultra</p>
-                  <img
-                    src="img/Frame 1000001161.png"
-                    alt="star"
-                    class="star-img"
-                  />
-                  <p class="Body-1-Regular">$1350.00</p>
-                </div>
-                <div class="post-item">
-                  <figure class="gallery-item">
-                    <img src="img/image 19.png" alt="Apple iPad Mini 6 Wi-Fi" />
-                  </figure>
-                  <p class="Body-1-Bold">Apple iPad Mini 6 Wi-Fi</p>
+                  <p class="Body-1-Bold">Apple iPhone 13</p>
                   <img
                     src="img/Frame 1000001161.png"
                     alt="star"
@@ -887,33 +851,21 @@
                 </div>
                 <div class="post-item">
                   <figure class="gallery-item">
-                    <img src="img/image 20.png" alt="Microsoft Surface Go" />
+                    <img src="img/image 28.png" alt="Apple iPhone 14 Plus" />
                   </figure>
-                  <p class="Body-1-Bold">Microsoft Surface Go</p>
+                  <p class="Body-1-Bold">Fossil Gen 6 Smart Watch</p>
                   <img
                     src="img/Frame 1000001161.png"
                     alt="star"
                     class="star-img"
                   />
-                  <p class="Body-1-Regular">$399.00</p>
+                  <p class="Body-1-Regular">$450.00</p>
                 </div>
                 <div class="post-item">
                   <figure class="gallery-item">
-                    <img src="img/image 21.png" alt="LG 4K Ultra UHD TV" />
+                    <img src="img/image 29.png" alt="Bose QuietComfort 45" />
                   </figure>
-                  <p class="Body-1-Bold">LG 4K Ultra UHD TV</p>
-                  <img
-                    src="img/Frame 1000001161.png"
-                    alt="star"
-                    class="star-img"
-                  />
-                  <p class="Body-1-Regular">$5500.00</p>
-                </div>
-                <div class="post-item">
-                  <figure class="gallery-item">
-                    <img src="img/image 22.png" alt="Apple iPhone 14 Plus" />
-                  </figure>
-                  <p class="Body-1-Bold">Apple iPhone 14 Plus</p>
+                  <p class="Body-1-Bold">Apple iPad Air Wi-Fi</p>
                   <img
                     src="img/Frame 1000001161.png"
                     alt="star"
@@ -923,7 +875,7 @@
                 </div>
               </div>
             </div>
-            <div class="tab-content">
+            <div class="topseller-tab-content">
               <div class="gallery">
                 <figure class="gallery-item el--1">
                   <h4 class="Header-4-Bold">Apple iPad Pro Wi-Fi</h4>
@@ -932,9 +884,9 @@
                 </figure>
                 <div class="post-item">
                   <figure class="gallery-item">
-                    <img src="img/image 22.png" alt="Apple iPhone 14 Plus" />
+                    <img src="img/image 29.png" alt="Bose QuietComfort 45" />
                   </figure>
-                  <p class="Body-1-Bold">Apple iPhone 14 Plus</p>
+                  <p class="Body-1-Bold">Apple iPad Air Wi-Fi</p>
                   <img
                     src="img/Frame 1000001161.png"
                     alt="star"
@@ -944,33 +896,24 @@
                 </div>
                 <div class="post-item">
                   <figure class="gallery-item">
-                    <img src="img/image 21.png" alt="LG 4K Ultra UHD TV" />
+                    <img src="img/image 28.png" alt="Apple iPhone 14 Plus" />
                   </figure>
-                  <p class="Body-1-Bold">LG 4K Ultra UHD TV</p>
+                  <p class="Body-1-Bold">Fossil Gen 6 Smart Watch</p>
                   <img
                     src="img/Frame 1000001161.png"
                     alt="star"
                     class="star-img"
                   />
-                  <p class="Body-1-Regular">$5500.00</p>
+                  <p class="Body-1-Regular">$450.00</p>
                 </div>
                 <div class="post-item">
                   <figure class="gallery-item">
-                    <img src="img/image 20.png" alt="Microsoft Surface Go" />
+                    <img
+                      src="img/image 27.png"
+                      alt="Samsung Galaxy S22 Ultra"
+                    />
                   </figure>
-                  <p class="Body-1-Bold">Microsoft Surface Go</p>
-                  <img
-                    src="img/Frame 1000001161.png"
-                    alt="star"
-                    class="star-img"
-                  />
-                  <p class="Body-1-Regular">$399.00</p>
-                </div>
-                <div class="post-item">
-                  <figure class="gallery-item">
-                    <img src="img/image 19.png" alt="Apple iPad Mini 6 Wi-Fi" />
-                  </figure>
-                  <p class="Body-1-Bold">Apple iPad Mini 6 Wi-Fi</p>
+                  <p class="Body-1-Bold">Apple iPhone 13</p>
                   <img
                     src="img/Frame 1000001161.png"
                     alt="star"
@@ -980,30 +923,124 @@
                 </div>
                 <div class="post-item">
                   <figure class="gallery-item">
-                    <img
-                      src="img/image 18.png"
-                      alt="Samsung Galaxy S22 Ultra"
-                    />
+                    <img src="img/image 26.png" alt="LG 4K Ultra UHD TV" />
                   </figure>
-                  <p class="Body-1-Bold">Samsung Galaxy S22 Ultra</p>
+                  <p class="Body-1-Bold">Xiaomi Fimi X8 Mini</p>
                   <img
                     src="img/Frame 1000001161.png"
                     alt="star"
                     class="star-img"
                   />
-                  <p class="Body-1-Regular">$1350.00</p>
+                  <p class="Body-1-Regular">$650.00</p>
                 </div>
                 <div class="post-item">
                   <figure class="gallery-item">
-                    <img src="img/image 17.png" alt="Bose QuietComfort 45" />
+                    <img src="img/image 25.png" alt="Microsoft Surface Go" />
                   </figure>
-                  <p class="Body-1-Bold">Bose QuietComfort 45</p>
+                  <p class="Body-1-Bold">Asus ROG Delta S</p>
                   <img
                     src="img/Frame 1000001161.png"
                     alt="star"
                     class="star-img"
                   />
-                  <p class="Body-1-Regular">$300.00</p>
+                  <p class="Body-1-Regular">$250.00</p>
+                </div>
+                <div class="post-item">
+                  <figure class="gallery-item">
+                    <img src="img/image 24.png" alt="Apple iPad Mini 6 Wi-Fi" />
+                  </figure>
+                  <p class="Body-1-Bold">Panasonic Lumix DC-GH5 II</p>
+                  <img
+                    src="img/Frame 1000001161.png"
+                    alt="star"
+                    class="star-img"
+                  />
+                  <p class="Body-1-Regular">$1500.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="topseller-tab-content">
+              <div class="gallery">
+                <figure class="gallery-item el--1">
+                  <h4 class="Header-4-Bold">Apple iPad Pro Wi-Fi</h4>
+                  <p class="Header-4-Regular">$1520</p>
+                  <img src="img/PngItem_1757515 1.png" alt="ipad" />
+                </figure>
+                <div class="post-item">
+                  <figure class="gallery-item">
+                    <img src="img/image 24.png" alt="Apple iPad Mini 6 Wi-Fi" />
+                  </figure>
+                  <p class="Body-1-Bold">Panasonic Lumix DC-GH5 II</p>
+                  <img
+                    src="img/Frame 1000001161.png"
+                    alt="star"
+                    class="star-img"
+                  />
+                  <p class="Body-1-Regular">$1500.00</p>
+                </div>
+
+                <div class="post-item">
+                  <figure class="gallery-item">
+                    <img src="img/image 25.png" alt="Microsoft Surface Go" />
+                  </figure>
+                  <p class="Body-1-Bold">Asus ROG Delta S</p>
+                  <img
+                    src="img/Frame 1000001161.png"
+                    alt="star"
+                    class="star-img"
+                  />
+                  <p class="Body-1-Regular">$250.00</p>
+                </div>
+                <div class="post-item">
+                  <figure class="gallery-item">
+                    <img src="img/image 26.png" alt="LG 4K Ultra UHD TV" />
+                  </figure>
+                  <p class="Body-1-Bold">Xiaomi Fimi X8 Mini</p>
+                  <img
+                    src="img/Frame 1000001161.png"
+                    alt="star"
+                    class="star-img"
+                  />
+                  <p class="Body-1-Regular">$650.00</p>
+                </div>
+                <div class="post-item">
+                  <figure class="gallery-item">
+                    <img
+                      src="img/image 27.png"
+                      alt="Samsung Galaxy S22 Ultra"
+                    />
+                  </figure>
+                  <p class="Body-1-Bold">Apple iPhone 13</p>
+                  <img
+                    src="img/Frame 1000001161.png"
+                    alt="star"
+                    class="star-img"
+                  />
+                  <p class="Body-1-Regular">$500.00</p>
+                </div>
+                <div class="post-item">
+                  <figure class="gallery-item">
+                    <img src="img/image 28.png" alt="Apple iPhone 14 Plus" />
+                  </figure>
+                  <p class="Body-1-Bold">Fossil Gen 6 Smart Watch</p>
+                  <img
+                    src="img/Frame 1000001161.png"
+                    alt="star"
+                    class="star-img"
+                  />
+                  <p class="Body-1-Regular">$450.00</p>
+                </div>
+                <div class="post-item">
+                  <figure class="gallery-item">
+                    <img src="img/image 29.png" alt="Bose QuietComfort 45" />
+                  </figure>
+                  <p class="Body-1-Bold">Apple iPad Air Wi-Fi</p>
+                  <img
+                    src="img/Frame 1000001161.png"
+                    alt="star"
+                    class="star-img"
+                  />
+                  <p class="Body-1-Regular">$850.00</p>
                 </div>
               </div>
             </div>
@@ -1099,7 +1136,6 @@
           </div>
         </div>
       </div>
-      <div></div>
       <div class="footer-second-row">
         <div class="companies">
           <div class="company-logo grid grid--5-cols">

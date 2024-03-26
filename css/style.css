@@ -1,19 +1,18 @@
 /************************/
 /* HEADER */
 /************************/
-.header {
-  background-color: rgba(255, 255, 255, 10%);
-  height: 15rem;
-  padding: 0 15rem;
+
+.header-container {
+  padding: 2rem 15rem 0rem 15rem !important;
+  background-color: #a5a9ac1a;
 }
 
 .header-first-row {
-  max-width: 144rem;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 16.3fr 50.1fr 33.6fr;
+  gap: 3rem;
   align-items: center;
-  height: 9.1rem;
+  margin-bottom: 3rem;
 }
 
 .logo {
@@ -21,13 +20,114 @@
   width: 17.85rem;
 }
 
-.header-second-row {
-  max-width: 144rem;
-  margin: 0 auto;
+.header-search-box {
+  display: flex;
+}
+
+.all-select {
+  background-color: #fff;
+  padding: 1.3rem 1.6rem;
+  border-width: 1px 0px 1px 1px;
+  border-style: solid;
+  border-color: #a5a9ac33;
+  border-radius: 10px 0px 0px 10px;
+  transition: all 0.3s;
+}
+
+.all-select:hover,
+.all-select:active {
+  color: #1c4e8e;
+  cursor: pointer;
+}
+
+.search-input-box {
+  background-color: #fff;
   display: flex;
   align-items: center;
+  gap: 1rem;
+  width: 100%;
+  border: 1px;
+  border-style: solid;
+  border-color: #a5a9ac33;
+  padding: 1rem 1.6rem;
+}
+
+.search-input-box ion-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #101316;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #10131633;
+}
+
+.search-btn {
+  border-radius: 0px 10px 10px 0px !important;
+}
+
+.header-icon-container {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 3rem;
-  height: 5.9rem;
+}
+
+.header-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.header-icon-box ion-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #101316;
+}
+
+.login-btn {
+  padding: 1rem 2.45rem !important;
+}
+
+.header-second-row {
+  display: grid;
+  grid-template-columns: 28.5fr 71.5fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.header-categories {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #a5a9ac0d;
+  padding: 1.3rem 1.6rem;
+  border-radius: 5px 5px 0 0;
+}
+
+.header-categories ion-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.categories-select {
+  width: 100%;
+  border: none;
+  background: none;
+  transition: all 0.3s;
+}
+
+.categories-select:hover,
+.categories-select:active {
+  color: #1c4e8e;
+  cursor: pointer;
 }
 
 .main-nav-list {
@@ -69,7 +169,6 @@
 /* HERO SECTION */
 /************************/
 .section-hero {
-  background-color: rgba(255, 255, 255, 10%);
   margin-bottom: 10rem;
 }
 
@@ -78,9 +177,10 @@
   padding: 0 12.1rem 0 15rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 46.18fr 53.82fr;
+  grid-template-columns: 47fr 53fr;
   gap: 5.6rem;
   align-items: center;
+  background-color: #a5a9ac1a;
 }
 
 .hero-text-box {
@@ -97,8 +197,30 @@
   margin-bottom: 6.4rem;
 }
 
+.hero-img-box {
+  padding: 2.25rem 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img-box::before {
+  content: "";
+  display: block;
+  width: 111.5%;
+  padding-bottom: 111.5%;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-51%, -50%);
+}
+
 .hero-img {
   width: 100%;
+  z-index: 1;
 }
 
 /************************/
@@ -212,16 +334,16 @@
 }
 
 /************************/
-/* SECTION-=BESTSELLER */
+/* SECTION-BESTSELLER & TOPSELLER */
 /************************/
-
+.section-topseller,
 .section-bestseller {
   display: flex;
   flex-direction: column;
   gap: 5rem;
   margin-bottom: 10rem;
 }
-
+.topseller-title-box,
 .bestseller-title-box {
   display: grid;
   justify-content: space-between;
@@ -229,29 +351,32 @@
   grid-template-columns: 3fr 1fr;
   margin-bottom: 5rem;
 }
-
+.topseller-tab-heading-container,
 .tab-heading-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
 }
-
+.topseller-tab-heading,
 .tab-heading {
   cursor: pointer;
   border-bottom: 1px solid transparent;
   transition: all 0.3s;
 }
 
+.topseller-tab-heading.active,
 .tab-heading.active {
   color: #1c4e8e;
   border-bottom: 1px solid #1c4e8e;
 }
 
+.topseller-tab-content,
 .tab-content {
   display: none;
 }
 
+.topseller-tab-content.active,
 .tab-content.active {
   display: block;
 }
@@ -528,6 +653,7 @@
 }
 .input-field:focus {
   outline: none;
+  color: #fff;
 }
 
 .input-field::placeholder {

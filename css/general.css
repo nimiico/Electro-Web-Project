@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 html {
@@ -29,10 +30,6 @@ body {
   column-gap: 3rem;
   row-gap: 2rem;
   /* margin-bottom: 9.6rem; */
-}
-
-.grid:not(:last-child) {
-  margin-bottom: 9.6rem;
 }
 
 .grid--2-cols {
@@ -142,6 +139,21 @@ body {
 .btn:active {
   background-color: #163b6b;
   color: #fff;
+}
+
+.action-btn {
+  background-color: #1c4e8e;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+
+.action-btn:hover,
+.action-btn:active {
+  background-color: #163b6b;
+  color: #fff;
+  cursor: pointer;
 }
 
 .option-items {

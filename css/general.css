@@ -7,6 +7,7 @@
 
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 body {
@@ -25,9 +26,13 @@ body {
   margin: 0 auto;
 }
 
+.section {
+  margin-bottom: 10rem;
+}
+
 .grid {
   display: grid;
-  column-gap: 3rem;
+  column-gap: 2.4rem;
   row-gap: 2rem;
   /* margin-bottom: 9.6rem; */
 }
@@ -131,6 +136,7 @@ body {
   letter-spacing: -0.5px;
   padding: 2rem;
   border-radius: 15px;
+  border: none;
 
   transition: background-color 0.3s;
 }
@@ -147,6 +153,7 @@ body {
   padding: 1rem 2rem;
   border-radius: 10px;
   transition: background-color 0.3s;
+  border: none;
 }
 
 .action-btn:hover,

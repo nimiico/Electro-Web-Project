@@ -1,10 +1,13 @@
 /************************/
 /* HEADER */
 /************************/
+.header {
+  background-color: #a5a9ac1a;
+  position: relative;
+}
 
 .header-container {
-  padding: 2rem 15rem 0rem 15rem !important;
-  background-color: #a5a9ac1a;
+  padding: 2rem 15rem 0rem 15rem;
 }
 
 .header-first-row {
@@ -15,9 +18,8 @@
   margin-bottom: 3rem;
 }
 
-.logo {
-  height: 3.5rem;
-  width: 17.85rem;
+.Logo {
+  width: 100%;
 }
 
 .header-search-box {
@@ -77,6 +79,10 @@
   align-items: center;
   justify-content: center;
   gap: 3rem;
+}
+
+.log-icon {
+  display: n;
 }
 
 .header-icon-box {
@@ -166,10 +172,30 @@
 }
 
 /************************/
+/* MOBILE NAV */
+/************************/
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+
+.icon-mobile-nav {
+  width: 4.8rem;
+  height: 4.8rem;
+  color: #101316;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/************************/
 /* HERO SECTION */
 /************************/
 .section-hero {
-  margin-bottom: 10rem;
+  background-color: #a5a9ac1a;
 }
 
 .hero {
@@ -177,10 +203,9 @@
   padding: 0 12.1rem 0 15rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 47fr 53fr;
-  gap: 5.6rem;
+  grid-template-columns: 46.2fr 53.8fr;
+  gap: 5rem;
   align-items: center;
-  background-color: #a5a9ac1a;
 }
 
 .hero-text-box {
@@ -226,9 +251,6 @@
 /************************/
 /* CATEGORIES */
 /************************/
-.section-categories {
-  margin-bottom: 10rem;
-}
 
 .categories-title-box {
   display: flex;
@@ -279,10 +301,12 @@
   z-index: -1;
 }
 
-.cat-title-box {
+.cat-box {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
 }
 
 .cat-img {
@@ -292,9 +316,6 @@
 /************************/
 /* SECTION-OFF */
 /************************/
-.section-off {
-  margin-bottom: 10rem;
-}
 
 .off-post {
   display: flex;
@@ -341,7 +362,6 @@
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  margin-bottom: 10rem;
 }
 .topseller-title-box,
 .bestseller-title-box {
@@ -351,18 +371,28 @@
   grid-template-columns: 3fr 1fr;
   margin-bottom: 5rem;
 }
+
 .topseller-tab-heading-container,
 .tab-heading-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 2.1rem;
 }
+
 .topseller-tab-heading,
 .tab-heading {
   cursor: pointer;
   border-bottom: 1px solid transparent;
   transition: all 0.3s;
+}
+
+.tab-heading-container :last-child {
+  width: 10.2rem;
+}
+
+.topseller-tab-heading-container :last-child {
+  width: 10.2rem;
 }
 
 .topseller-tab-heading.active,
@@ -392,7 +422,7 @@
   float: left;
   display: block;
 }
-
+relative
 .tab input {
   display: none;
 }
@@ -432,7 +462,7 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: 36rem 23rem 23rem 23rem;
+  grid-template-columns: 36fr 23fr 23fr 23fr;
   gap: 3rem;
 }
 
@@ -471,6 +501,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  align-items: center;
 }
 
 .star-img {
@@ -501,7 +532,6 @@
 .opportunity-container {
   max-width: 144rem;
   margin: 0 auto;
-  margin-bottom: 10rem;
   position: relative;
 }
 
@@ -518,6 +548,10 @@
   width: 30%;
 }
 
+.opportunity-btn {
+  margin-bottom: 3rem;
+}
+
 .opportunity-description,
 .opportunity-title {
   color: #fff !important;
@@ -526,13 +560,10 @@
 /************************/
 /* SECTION-FEATURE*/
 /************************/
-.section-feature {
-  margin-bottom: 10rem;
-}
-
 .feature-box {
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
 }
 
 .feature-icon {
@@ -550,14 +581,16 @@
 /* SECTION-FOOTER/
 /************************/
 .footer-container {
-  padding: 3rem 15rem 6.4rem 15rem !important;
+  padding: 0 15rem !important;
+}
+
+.footer-first-row {
   display: grid;
   grid-template-columns: 30fr 12fr 19.5fr 38.5fr;
   gap: 9.9rem;
+  padding: 3rem 0 6.4rem 0;
 }
 .footer {
-  max-width: 144rem;
-  margin: 0 auto;
   background-color: #1c4e8e;
 }
 
@@ -570,6 +603,10 @@
 
 .logo-col img {
   margin-bottom: 2rem;
+}
+
+.logo {
+  width: 100%;
 }
 
 .logo-row {
@@ -678,20 +715,24 @@
 
 .footer-second-row {
   padding: 2rem 0;
-  max-width: 114rem;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid #a5a9ac33;
 }
+
+.mobile-contact {
+  display: none;
+}
+
 .box {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
   border-radius: 2.4px;
-  padding: 3.2px;
+  padding: 0.32rem;
 }
 
 .right {

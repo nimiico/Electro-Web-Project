@@ -146,6 +146,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
+  margin-bottom: 1rem;
 }
 
 .input-form-box {
@@ -175,11 +176,23 @@
   align-items: center;
   gap: 10.9rem;
   padding-left: 0.8rem;
+  margin-bottom: 3rem;
 }
 
 .checkbox-container {
   display: flex;
   gap: 1.2rem;
+}
+
+.forget-btn {
+  background: none;
+  border: none;
+}
+
+.forget-btn:hover,
+.forget-btn:active {
+  color: #1c4e8e;
+  cursor: pointer;
 }
 
 .btn-form-box {
@@ -281,7 +294,7 @@
   top: 57%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 4;
+  z-index: 5;
 
   transition: all 0.3s ease-in;
   opacity: 0;
@@ -304,6 +317,12 @@
   border: none;
 }
 
+.reg-register-btn:hover,
+.reg-register-btn:active {
+  background-color: #163b6b;
+  cursor: pointer;
+}
+
 .agree {
   padding-right: 9rem;
 }
@@ -314,6 +333,206 @@
   justify-content: center;
   gap: 2rem;
 }
+
+/************************/
+/* OTP */
+/************************/
+
+.otp-close-box {
+  position: absolute;
+  background-color: #fff;
+  position: absolute;
+  padding: 0.7rem 0.8rem;
+  border-radius: 5px;
+
+  top: 0%;
+  left: 100%;
+  transform: translate(-100%, -120%);
+  z-index: 6;
+  border: none;
+}
+
+.otp-view {
+  background-color: #fff;
+  position: absolute;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #a5a9ac33;
+  width: 42rem;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+
+  transition: all 0.3s ease-in;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.otp-open .otp-view {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.inputfield {
+  display: flex;
+  gap: 2rem;
+}
+.input {
+  height: 6rem;
+  width: 6rem;
+  border: 1px solid #dad9df;
+  outline: none;
+  text-align: center;
+  font-size: 2.4rem;
+  color: #161010;
+  width: 700;
+  line-height: 36px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  outline: none;
+  /*Hide number field arrows*/
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.send-otp-box {
+  display: grid;
+  gap: 3rem;
+}
+
+.send-otp {
+  background-color: #1c4e8e;
+  color: #fff;
+  padding: 2rem 0;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.send-otp:hover,
+.send-otp:active {
+  background-color: #163b6b;
+  cursor: pointer;
+}
+
+.input:disabled {
+  color: #101316;
+}
+.input:focus {
+  border: 3px solid #1c4e8e;
+}
+
+/************************/
+/* PASSWORD CHANGE */
+/************************/
+
+.success-view {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #a5a9ac33;
+  width: 39.2rem;
+
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+
+  transition: all 0.3s ease-in;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.success-open .success-view {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.first-circle {
+  background-color: #1c4e8e;
+  padding: 1.9rem 2rem;
+  border-radius: 100%;
+  text-align: center;
+  position: relative;
+  margin: 2.1rem 0 4.1rem 0;
+}
+
+.first-circle::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  background-color: #1c4e8e33;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 134%;
+  padding-bottom: 134%;
+  border-radius: 100%;
+}
+
+.first-circle::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  background-color: #1c4e8e1a;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 168%;
+  padding-bottom: 168%;
+  border-radius: 100%;
+}
+
+.first-circle ion-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #ffffff;
+}
+
+.success-container {
+  gap: 3rem;
+}
+
+.success-content-box {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+}
+
+.success-Change-pass-btn {
+  background-color: #1c4e8e;
+  color: #fff;
+  padding: 2rem 0;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.success-Change-pass-btn:hover,
+.success-Change-pass-btn:active {
+  background-color: #163b6b;
+  cursor: pointer;
+}
+
+/* ////////////////////////////////////// */
 
 .header-icon-box ion-icon {
   width: 2.4rem;

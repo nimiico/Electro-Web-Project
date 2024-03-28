@@ -105,26 +105,21 @@
                   <label class="label" for="password">Password</label>
                   <input id="password" placeholder="••••••••••••••••••" />
                 </div>
-                <div class="forget-box">
-                  <div class="checkbox-container">
-                    <input
-                      type="checkbox"
-                      id="remember"
-                      name="remember"
-                      checked
-                    />
-                    <label for="remember" class="Body-1-Regular"
-                      >Remember Me</label
-                    >
-                  </div>
-                  <p class="Body-2-Regular">Forgot Password?</p>
-                </div>
-              </div>
-              <div class="btn-form-box general-grid">
-                <button class="action-btn log-login-btn">Login</button>
-                <button class="log-register-btn">Register</button>
               </div>
             </form>
+            <div class="forget-box">
+              <div class="checkbox-container">
+                <input type="checkbox" id="remember" name="remember" checked />
+                <label for="remember" class="Body-1-Regular">Remember Me</label>
+              </div>
+              <button class="forget-btn">
+                <p class="Body-2-Regular">Forgot Password?</p>
+              </button>
+            </div>
+            <div class="btn-form-box general-grid">
+              <button class="action-btn log-login-btn">Login</button>
+              <button class="log-register-btn">Register</button>
+            </div>
             <p class="Body-2-Regular login-with">Or Login With</p>
             <div class="login-with-btn-box general-grid">
               <button class="login-with-btn Body-1-Regular login-with-btn">
@@ -168,10 +163,10 @@
                   >
                 </div>
               </div>
-              <div class="btn-form-box general-grid">
-                <button class="reg-register-btn">Register</button>
-              </div>
             </form>
+            <div class="btn-form-box general-grid">
+              <button class="reg-register-btn">Register</button>
+            </div>
             <p class="Body-2-Regular login-with">Or Login With</p>
             <div class="login-with-btn-box general-grid">
               <button class="login-with-btn Body-1-Regular login-with-btn">
@@ -183,6 +178,46 @@
                 Login with Apple
               </button>
             </div>
+          </div>
+        </div>
+        <div class="otp-view">
+          <button class="otp-close-box">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+          <div class="login-signup-box">
+            <div class="login-signup-title">
+              <h4 class="Header-4-Bold">Enter OTP</h4>
+              <p class="Body-1-Regular">
+                We have share a code of your registered email address
+                kristin.watson@example.com
+              </p>
+            </div>
+          </div>
+          <div class="send-otp-box">
+            <div class="inputfield">
+              <input type="number" maxlength="1" class="input" disabled />
+              <input type="number" maxlength="1" class="input" disabled />
+              <input type="number" maxlength="1" class="input" disabled />
+              <input type="number" maxlength="1" class="input" disabled />
+              <input type="number" maxlength="1" class="input" disabled />
+            </div>
+            <button class="send-otp">Send OTP</button>
+          </div>
+        </div>
+        <div class="success-view">
+          <div class="circle">
+            <div class="first-circle">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            </div>
+          </div>
+          <div class="success-container general-grid">
+            <div class="success-content-box">
+              <h5 class="Header-5-Bold">Password Changed Successfully</h5>
+              <p class="Body-1-Regular">
+                Your password has been updated successfully
+              </p>
+            </div>
+            <button class="success-Change-pass-btn">Back to Login</button>
           </div>
         </div>
         <div class="hero">

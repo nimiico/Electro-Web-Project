@@ -65,6 +65,7 @@ body {
 .heading-primary,
 .Header-3-Bold,
 .Header-4-Bold,
+.Header-5-Bold,
 .Header-7-Bold,
 .Body-1-Bold {
   font-weight: 700;
@@ -97,6 +98,11 @@ body {
 .Header-4-Bold {
   font-size: 3rem;
   line-height: 1.4;
+}
+
+.Header-5-Bold {
+  font-size: 2.4rem;
+  line-height: 1.5;
 }
 
 .Header-7-Bold {

@@ -72,10 +72,13 @@ body {
   letter-spacing: -0.5px;
 }
 
+.Body-2-Regular,
 .Header-4-Regular,
 .Header-6-Regular,
 .Header-7-Regular,
 .Body-1-Regular {
+  font-weight: 400;
+  color: #101316;
   font-weight: 400;
   color: #101316;
 }
@@ -126,6 +129,20 @@ body {
   line-height: 1.875;
 }
 
+.Body-2-Regular {
+  font-size: 1.4rem;
+  line-height: 1.7;
+}
+
+.label {
+  display: block;
+  font-size: 1.2rem;
+  line-height: 1.66;
+  font-weight: 400;
+  color: #101316;
+  margin-bottom: 2px;
+}
+
 .btn:link,
 .btn:visited {
   background-color: #1c4e8e;
@@ -173,4 +190,13 @@ body {
   border-bottom: 1px solid #1c4e8e;
   color: #1c4e8e;
   cursor: pointer;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  filter: saturate(40%);
+}
+
+.general-grid {
+  display: grid;
 }

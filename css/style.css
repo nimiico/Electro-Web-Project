@@ -4,6 +4,7 @@
 .header {
   background-color: #a5a9ac1a;
   position: relative;
+  width: 100%;
 }
 
 .header-container {
@@ -1184,4 +1185,414 @@ relative
 .contact {
   display: flex;
   gap: 2rem;
+}
+
+/****************************************************************
+*****************************************************************
+*******************  APPLE IPHONE 14 PRO  ***********************
+*****************************************************************
+****************************************************************/
+
+/************************/
+/* SECTION-PRODUCT DETAIL/
+/************************/
+.product-details-section {
+  margin-top: 5rem;
+}
+
+.product-details-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.path {
+  display: flex;
+  align-items: center;
+}
+
+.path ion-icon {
+  padding: 0 0.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.product-specification-container {
+  column-gap: 3rem;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-img-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a5a9ac0d;
+  z-index: 2;
+  content: "";
+  height: 55.5rem;
+  width: 55.5rem;
+}
+
+.details-img-box img {
+  width: 62.34%;
+  z-index: 1;
+  position: absolute;
+}
+
+.specification-content {
+  position: relative;
+}
+
+.specification-content h4 {
+  margin-bottom: 5px;
+}
+
+.reviews p {
+  color: #a5a9ac !important;
+}
+
+.reviews {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+
+.spec-price {
+  margin-bottom: 1.6rem;
+}
+
+.spec-description {
+  margin-bottom: 2rem;
+}
+
+.spec-color-container {
+  gap: 1.4rem;
+  margin-bottom: 4.5rem;
+}
+
+.spec-color-box {
+  display: flex;
+  gap: 1rem;
+}
+
+.spec-color {
+  width: 3.6rem;
+  height: 3.6rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.color1 {
+  background-color: #bebec6;
+}
+
+.color2 {
+  background-color: #304fbe;
+}
+
+.color3 {
+  background-color: #101316;
+}
+
+.color4 {
+  background-color: #5d30be;
+}
+
+.add-cart-box {
+  grid-template-columns: 23.4fr 65.8fr 10.8fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.product-nums-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #a5a9ac33;
+  border-radius: 10px;
+}
+
+.product-nums-box ion-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 1.6rem 0.8rem;
+}
+
+.product-nums-box ion-icon[name="add-outline"] {
+  border-left: 1px solid #a5a9ac33;
+}
+
+.product-nums-box ion-icon[name="remove-outline"] {
+  border-right: 1px solid #a5a9ac33;
+}
+
+.product-nums-box p {
+  text-align: center;
+  padding: 1.3rem 1.7rem;
+  border: none;
+}
+
+.add-cart-box ion-icon[name="heart-outline"] {
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 1.6rem;
+  background-color: #a5a9ac0d;
+  border-radius: 10px;
+  border: none;
+}
+
+.add-cart-btn {
+  background-color: #1c4e8e;
+  color: #fff;
+  padding: 2rem 0;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.add-cart-btn:hover,
+.add-cart-btn:active {
+  background-color: #163b6b;
+  cursor: pointer;
+}
+
+.spec-share-box {
+  gap: 8px;
+}
+
+.spec-logos-box {
+  display: flex;
+  gap: 1rem;
+}
+
+.spec-logos-box ion-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  padding: 1.6rem;
+  border: 1px solid #a5a9ac33;
+  border-radius: 10px;
+}
+
+.product-imgs {
+  display: flex;
+  gap: 2.1rem;
+}
+
+.product-imgs div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a5a9ac0d;
+  z-index: 2;
+  content: "";
+  height: 12.3rem;
+  width: 12.3rem;
+}
+
+.product-imgs img {
+  width: 39.83%;
+  z-index: 1;
+  position: absolute;
+}
+
+.product-tab-heading-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  border-bottom: 1px solid #a5a9ac33;
+  margin-bottom: 2rem;
+}
+
+.product-tab-heading-container h6 {
+  padding-bottom: 1.4rem;
+}
+
+.product-tab-heading {
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+}
+
+.product-tab-heading.active {
+  border-bottom: 3px solid #1c4e8e;
+  color: #1c4e8e;
+  font-weight: 700 !important;
+}
+
+.product-tab-content {
+  display: none;
+}
+
+.product-tab-content.active {
+  display: block;
+}
+
+.info-cols {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.info-col-1,
+.info-col-2 {
+  gap: 1rem;
+}
+
+.reviews-box {
+  gap: 5rem;
+}
+
+.customer-reviews {
+  gap: 2rem;
+}
+
+.review {
+  border-bottom: 1px solid #a5a9ac33;
+}
+
+.reviewer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.reviewer-info p {
+  margin-bottom: 4px;
+}
+
+.review-title {
+  margin-bottom: 2px;
+}
+
+.review-text {
+  margin-bottom: 1rem;
+}
+
+.review span {
+  color: #a5a9ac;
+}
+
+.review-date {
+  margin-bottom: 1.62rem;
+}
+
+.your-review {
+  gap: 2rem;
+}
+
+.your-review-fields {
+  gap: 3rem;
+}
+
+.your-rating {
+  gap: 1rem;
+}
+
+.your-rate {
+  display: flex;
+}
+
+.your-rate img:nth-child(1) {
+  padding-right: 1rem;
+}
+
+.your-rate img:not(:nth-child(1)) {
+  padding: 0 1rem;
+}
+
+.your-rate img:not(:nth-child(5)) {
+  border-right: 1px solid #a5a9ac33;
+}
+
+.your-inputs {
+  gap: 2rem;
+}
+
+.your-inputs textarea,
+.your-inputs input {
+  width: 100%;
+  padding: 1.9rem 1.3rem;
+  border: 1px solid #a5a9ac33;
+  border-radius: 10px;
+}
+
+.your-inputs textarea,
+.your-inputs input:focus {
+  overflow: hidden;
+}
+.your-inputs textarea::placeholder,
+.your-inputs input::placeholder {
+  font-size: 1.6rem;
+  line-height: 3rem;
+  font-weight: 400;
+  color: #a5a9accc;
+}
+
+.review-subnit-btn {
+  background-color: #1c4e8e;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 3rem;
+  font-weight: 400;
+  padding: 1.3rem 4rem;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  border: none;
+
+  justify-self: start;
+}
+
+.review-subnit-btn:hover,
+.review-subnit-btn:active {
+  background-color: #163b6b;
+  cursor: pointer;
+}
+
+/************************/
+/* SECTION-RELATED-PRODUCT/
+/************************/
+
+.related-products-container {
+  gap: 5rem;
+}
+
+.related-post-box {
+  gap: 3rem;
+}
+
+.related-img-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a5a9ac0d;
+  z-index: 2;
+  content: "";
+  width: 26.2rem;
+  height: 33rem;
+}
+
+.related-img-box img {
+  width: 98%;
+  z-index: 1;
+  position: absolute;
+}
+
+.related-post-item {
+  gap: 2rem;
+}
+
+.related-content-title {
+  margin-bottom: 8px;
+}
+
+.related-content-box img {
+  margin-bottom: 5px;
 }

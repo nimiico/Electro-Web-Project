@@ -64,6 +64,7 @@ const btnOPenSignupEl = document.querySelector(".log-register-btn");
 const btnOPenOTPEl = document.querySelector(".reg-register-btn");
 const btnSendOTPEl = document.querySelector(".send-otp");
 const btnOpenSuccessEl = document.querySelector(".forget-btn");
+
 const btnSuccessBackLoginEl = document.querySelector(
   ".success-Change-pass-btn"
 );

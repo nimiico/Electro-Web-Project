@@ -67,7 +67,8 @@ body {
 .Header-5-Bold,
 .Header-6-Bold,
 .Header-7-Bold,
-.Body-1-Bold {
+.Body-1-Bold,
+.Body-2-Bold {
   font-weight: 700;
   color: #101316;
   letter-spacing: -0.5px;
@@ -87,7 +88,7 @@ body {
 .heading-primary {
   font-size: 8rem;
   line-height: 1.375;
-  margin-bottom: 3.2rem;
+  margin-bottom: 1rem;
 }
 
 .Header-3-Bold {
@@ -118,6 +119,11 @@ body {
 .Body-1-Bold {
   font-size: 1.6rem;
   line-height: 1.875;
+}
+
+.Body-2-Bold {
+  font-size: 1.4rem;
+  line-height: 1.7;
 }
 
 .Header-7-Regular {
@@ -210,4 +216,17 @@ input[type="checkbox"] {
 
 .general-grid {
   display: grid;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 90;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: auto;
+  background-color: #1013161a;
 }

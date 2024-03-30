@@ -2,6 +2,30 @@
   html {
     font-size: 56.25%;
   }
+
+  .Group {
+    display: none;
+  }
+
+  .Path {
+    display: none;
+  }
+
+  .Path-1 {
+    display: none;
+  }
+
+  .Group-1 {
+    display: none;
+  }
+
+  .Group-2 {
+    display: none;
+  }
+
+  .Group-3 {
+    display: none;
+  }
 }
 
 @media (max-width: 85em) {
@@ -324,6 +348,14 @@
     display: block;
     background: transparent;
     border: none;
+  }
+
+  .login-btn {
+    display: none;
+  }
+
+  .login-btn-icon {
+    display: block;
   }
 
   .off-post {

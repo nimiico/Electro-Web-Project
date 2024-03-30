@@ -1,127 +1,100 @@
-const tabHeadingAll = document.querySelectorAll(".tab-heading");
+///////////////////////////
+//***** MODAL *****///////
+/////////////////////////
 
-const tabContentAll = document.querySelectorAll(".tab-content");
+var modal = document.getElementById("modal");
+var cartModal = document.getElementById("cart-modal");
+var cartBtn = document.getElementById("cart-btn");
 
-const topsellerTabHeadingAll = document.querySelectorAll(
-  ".topseller-tab-heading"
-);
+var loginView = document.getElementById("login-view");
+var headerLoginBtn = document.getElementById("header-login-btn");
+var loginBtnIcon = document.getElementById("login-btn-icon");
+var closeBtn = document.getElementById("close-btn");
+var logLoginBtn = document.getElementById("log-login-btn");
+var logRegisterBtn = document.getElementById("log-register-btn");
+var forgetBtn = document.getElementById("forget-btn");
 
-const topsellerTabContentAll = document.querySelectorAll(
-  ".topseller-tab-content"
-);
+var signupView = document.getElementById("signup-view");
+var sCloseBtn = document.getElementById("s-close-btn");
+var regRegisterBtn = document.getElementById("reg-register-btn");
 
-const removeAllActive = () => {
-  tabContentAll.forEach((c) => {
-    c.classList.remove("active");
-  });
+var otpView = document.getElementById("otp-view");
+var otpCloseBtn = document.getElementById("otp-close-btn");
+var sendOtp = document.getElementById("send-otp");
 
-  tabHeadingAll.forEach((h) => {
-    h.classList.remove("active");
-  });
+var successView = document.getElementById("success-view");
+var successChangePassBtn = document.getElementById("success-Change-pass-btn");
+
+///////////////////////////
+//***** CART MODAL *****//
+/////////////////////////
+
+cartBtn.onclick = function () {
+  modal.style.display = "block";
+
+  cartModal.style.display = "flex";
 };
-tabHeadingAll.forEach((h, i) => {
-  h.addEventListener("click", () => {
-    removeAllActive();
-    tabContentAll[i].classList.add("active");
-    h.classList.add("active");
-  });
-});
 
-const topsellerRemoveAllActive = () => {
-  topsellerTabContentAll.forEach((c) => {
-    c.classList.remove("active");
-  });
+///////////////////////////
+//***** LOGIN MODAL *****//
+/////////////////////////
 
-  topsellerTabHeadingAll.forEach((h) => {
-    h.classList.remove("active");
-  });
+headerLoginBtn.onclick = function () {
+  modal.style.display = "block";
+  loginView.style.display = "flex";
 };
-topsellerTabHeadingAll.forEach((h, i) => {
-  h.addEventListener("click", () => {
-    topsellerRemoveAllActive();
-    topsellerTabContentAll[i].classList.add("active");
-    h.classList.add("active");
-  });
-});
 
-/////////////////////////////////////////
-// MOBILE NAVIGATION MENU //
-////////////////////////////////////////
+loginBtnIcon.onclick = function () {
+  modal.style.display = "block";
+  loginView.style.display = "flex";
+};
 
-const btnNavEl = document.querySelector(".btn-mobile-nav");
-const headerEl = document.querySelector(".header");
+closeBtn.onclick = function () {
+  modal.style.display = "none";
+  loginView.style.display = "none";
+};
 
-btnNavEl.addEventListener("click", function () {
-  headerEl.classList.toggle("nav-open");
-});
+logLoginBtn.onclick = function () {
+  modal.style.display = "none";
+  loginView.style.display = "none";
+};
 
-/////////////////////////////////////////
-// LOGIN & SIGNUP //
-////////////////////////////////////////
-const btnLoginEl = document.querySelector(".log-login-btn");
-const btnOPenLoginEl = document.querySelector(".login-btn");
-const btnOPenSignupEl = document.querySelector(".log-register-btn");
-const btnOPenOTPEl = document.querySelector(".reg-register-btn");
-const btnSendOTPEl = document.querySelector(".send-otp");
-const btnOpenSuccessEl = document.querySelector(".forget-btn");
+logRegisterBtn.onclick = function () {
+  loginView.style.display = "none";
+  signupView.style.display = "block";
+};
 
-const btnSuccessBackLoginEl = document.querySelector(
-  ".success-Change-pass-btn"
-);
+forgetBtn.onclick = function () {
+  loginView.style.display = "none";
+  successView.style.display = "block";
+};
+/////////////////////////////
+//***** SIGNUP MODAL *****//
+///////////////////////////
 
-const btnCloseLoginEl = document.querySelector(".close-box");
-const btnClosesignupEl = document.querySelector(".s-close-box");
-const btnCloseOTPEl = document.querySelector(".otp-close-box");
+sCloseBtn.onclick = function () {
+  modal.style.display = "none";
+  signupView.style.display = "none";
+};
 
-const herorEl = document.querySelector(".section-hero");
+regRegisterBtn.onclick = function () {
+  signupView.style.display = "none";
+  otpView.style.display = "block";
+};
 
-btnOPenLoginEl.addEventListener("click", function () {
-  herorEl.classList.add("login-open");
-});
+/////////////////////////////
+//***** OTP MODAL *****//
+///////////////////////////
 
-btnCloseLoginEl.addEventListener("click", function () {
-  herorEl.classList.remove("login-open");
-});
+otpCloseBtn.onclick = function () {
+  modal.style.display = "none";
+  otpView.style.display = "none";
+};
 
-btnLoginEl.addEventListener("click", function () {
-  herorEl.classList.remove("login-open");
-});
-
-btnOpenSuccessEl.addEventListener("click", function () {
-  herorEl.classList.remove("login-open");
-  herorEl.classList.add("success-open");
-});
-
-btnSuccessBackLoginEl.addEventListener("click", function () {
-  herorEl.classList.remove("success-open");
-  herorEl.classList.add("login-open");
-});
-
-btnOPenSignupEl.addEventListener("click", function () {
-  herorEl.classList.remove("login-open");
-  herorEl.classList.add("signup-open");
-});
-
-btnClosesignupEl.addEventListener("click", function () {
-  herorEl.classList.remove("signup-open");
-});
-
-btnOPenOTPEl.addEventListener("click", function () {
-  herorEl.classList.remove("signup-open");
-  herorEl.classList.add("otp-open");
-});
-
-btnCloseOTPEl.addEventListener("click", function () {
-  herorEl.classList.remove("otp-open");
-});
-
-btnSendOTPEl.addEventListener("click", function () {
-  herorEl.classList.remove("otp-open");
-});
-
-/////////////////////////////////////////
-// OTP //
-////////////////////////////////////////
+sendOtp.onclick = function () {
+  modal.style.display = "none";
+  otpView.style.display = "none";
+};
 
 const input = document.querySelectorAll(".input");
 const inputField = document.querySelector(".inputfield");
@@ -194,3 +167,106 @@ const startInput = () => {
 };
 
 window.onload = startInput();
+
+///////////////////////////////////////////////
+//***** SUCCESS PASSWORD CHANGED MODAL *****//
+/////////////////////////////////////////////
+
+successChangePassBtn.onclick = function () {
+  successView.style.display = "none";
+  loginView.style.display = "block";
+};
+
+///////////////////////////////////
+//***** WINDOW CLOSE MODAL *****//
+/////////////////////////////////
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    cartModal.style.display = "none";
+    loginView.style.display = "none";
+  }
+};
+
+/////////////////////////////////////////
+// MOBILE NAVIGATION MENU //////////////
+////////////////////////////////////////
+
+const btnNavEl = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header");
+
+btnNavEl.addEventListener("click", function () {
+  headerEl.classList.toggle("nav-open");
+});
+
+///////////////////////////////////
+//***** TABS *****//
+/////////////////////////////////
+
+const tabHeadingAll = document.querySelectorAll(".tab-heading");
+
+const tabContentAll = document.querySelectorAll(".tab-content");
+
+const topsellerTabHeadingAll = document.querySelectorAll(
+  ".topseller-tab-heading"
+);
+
+const topsellerTabContentAll = document.querySelectorAll(
+  ".topseller-tab-content"
+);
+
+const removeAllActive = () => {
+  tabContentAll.forEach((c) => {
+    c.classList.remove("active");
+  });
+
+  tabHeadingAll.forEach((h) => {
+    h.classList.remove("active");
+  });
+};
+tabHeadingAll.forEach((h, i) => {
+  h.addEventListener("click", () => {
+    removeAllActive();
+    tabContentAll[i].classList.add("active");
+    h.classList.add("active");
+  });
+});
+
+const topsellerRemoveAllActive = () => {
+  topsellerTabContentAll.forEach((c) => {
+    c.classList.remove("active");
+  });
+
+  topsellerTabHeadingAll.forEach((h) => {
+    h.classList.remove("active");
+  });
+};
+topsellerTabHeadingAll.forEach((h, i) => {
+  h.addEventListener("click", () => {
+    topsellerRemoveAllActive();
+    topsellerTabContentAll[i].classList.add("active");
+    h.classList.add("active");
+  });
+});
+
+const productTabHeadingAll = document.querySelectorAll(".product-tab-heading");
+
+const productTabContentAll = document.querySelectorAll(".product-tab-content ");
+
+const productRemoveAllActive = () => {
+  productTabContentAll.forEach((c) => {
+    c.classList.remove("active");
+  });
+
+  productTabHeadingAll.forEach((h) => {
+    h.classList.remove("active");
+  });
+};
+productTabHeadingAll.forEach((h, i) => {
+  h.addEventListener("click", () => {
+    productRemoveAllActive();
+    productTabContentAll[i].classList.add("active");
+    h.classList.add("active");
+  });
+});

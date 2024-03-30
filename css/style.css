@@ -1,3 +1,6 @@
+/* ////////////////////////////////////////////////////----------------------Index PAGE---------------------
+////////////////////////////////////////////////// */
+
 /************************/
 /* HEADER */
 /************************/
@@ -89,6 +92,7 @@
 .cart-btn {
   background: none;
   border: none;
+  position: relative;
 }
 
 .cart-btn:hover,
@@ -98,11 +102,25 @@
   border: none;
 }
 
+.number-cart {
+  position: absolute;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+  text-align: center;
+  background-color: #1c4e8e;
+  color: #fff;
+  border: none;
+  border-radius: 100%;
+  padding: 0 4.75px;
+  top: 0%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
 .log-icon {
   display: none;
 }
-
-/* ////////////////////////////////////// */
 
 .header-icon-box ion-icon {
   width: 2.4rem;
@@ -307,7 +325,7 @@
 }
 
 /************************/
-/* CATEGORIES */
+/*SECTION CATEGORIES */
 /************************/
 
 .section-categories {
@@ -755,11 +773,8 @@
   gap: 2rem;
 }
 
-/****************************************************************
-*****************************************************************
-*******************  APPLE IPHONE 14 PRO  ***********************
-*****************************************************************
-****************************************************************/
+/* ////////////////////////////////////////////////////-----------------APPLE_IPHONE_!$PRO-------------------
+////////////////////////////////////////////////// */
 
 /************************/
 /* SECTION-PRODUCT DETAIL/
@@ -825,7 +840,22 @@
   background-color: #3cd1391a;
   border-radius: 4px;
   top: 0%;
-  left: 87%;
+  left: 86%;
+}
+
+.caption {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2rem;
+  color: #3cd139;
+
+  padding: 6px 10px;
+  background-color: #3cd1391a;
+  border-radius: 4px;
+  top: 0%;
+  left: 0%;
+  display: none;
 }
 
 .specification-content h4 {
@@ -963,6 +993,10 @@
 .product-imgs {
   display: flex;
   gap: 2.1rem;
+}
+
+.product-imgs-mobile {
+  display: none;
 }
 
 .product-imgs div {
@@ -1179,9 +1213,8 @@
   margin-bottom: 5px;
 }
 
-/************************/
-/* MODALS/
-/************************/
+/* ////////////////////////////////////////////////////----------------------MODALS---------------------
+////////////////////////////////////////////////// */
 
 /************************/
 /* CART-MODAL/
@@ -1198,7 +1231,7 @@
   width: 35.2rem;
   height: 100vh;
 
-  z-index: 100;
+  z-index: 400;
   display: none;
 
   flex-direction: column;
@@ -1346,6 +1379,7 @@
   padding: 2rem;
   border-radius: 16px;
   border: 1px solid #a5a9ac33;
+  width: 42rem;
 
   top: 50%;
   left: 50%;
@@ -1409,7 +1443,7 @@
 .forget-box {
   display: flex;
   align-items: center;
-  gap: 10.9rem;
+  gap: 9.8rem;
   padding-left: 0.8rem;
   margin-bottom: 3rem;
 }
@@ -1511,11 +1545,12 @@
   position: absolute;
   padding: 0.7rem 0.8rem;
   border-radius: 5px;
+  border: 1px solid transparent;
 
   top: 0%;
   left: 100%;
   transform: translate(-100%, -120%);
-  z-index: 4;
+  z-index: 100;
   border: none;
 }
 
@@ -1532,6 +1567,7 @@
   border-radius: 16px;
   border: 1px solid #a5a9ac33;
   display: none;
+  width: 42rem;
 
   top: 50%;
   left: 50%;
@@ -1557,10 +1593,6 @@
   cursor: pointer;
 }
 
-.agree {
-  padding-right: 9rem;
-}
-
 .header-icon-box {
   display: flex;
   align-items: center;
@@ -1578,11 +1610,12 @@
   position: absolute;
   padding: 0.7rem 0.8rem;
   border-radius: 5px;
+  border: 1px solid transparent;
 
   top: 0%;
   left: 100%;
   transform: translate(-100%, -120%);
-  z-index: 6;
+  z-index: 100;
   border: none;
 }
 

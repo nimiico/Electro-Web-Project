@@ -186,6 +186,9 @@ window.onclick = function (event) {
     modal.style.display = "none";
     cartModal.style.display = "none";
     loginView.style.display = "none";
+    signupView.style.display = "none";
+    otpView.style.display = "none";
+    successView.style.display = "none";
   }
 };
 

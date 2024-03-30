@@ -160,6 +160,10 @@ body {
   margin-bottom: 2px;
 }
 
+/************************/
+/* BUTTON*/
+/************************/
+
 .btn:link,
 .btn:visited {
   background-color: #1c4e8e;

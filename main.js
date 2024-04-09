@@ -235,3 +235,106 @@ productTabHeadingAll.forEach((h, i) => {
     h.classList.add("active");
   });
 });
+
+// ///////////////////////////////////
+// //***** COLORS PRICE *****//
+// /////////////////////////////////
+
+function colorPrice(colorIcon) {
+  if (colorIcon == "color1") {
+    document.getElementById("spec-price").innerHTML = "$1999";
+  }
+  if (colorIcon == "color2") {
+    document.getElementById("spec-price").innerHTML = "$1949";
+  }
+  if (colorIcon == "color3") {
+    document.getElementById("spec-price").innerHTML = "$2049";
+  }
+  if (colorIcon == "color4") {
+    document.getElementById("spec-price").innerHTML = "$2099";
+  }
+}
+
+// ///////////////////////////////////
+// //***** ADD TO CART *****//
+// /////////////////////////////////
+
+class CartProduct {
+  constructor(name, price, rate, rateCount, description, color, img, number) {
+    this.name = name;
+    this.price = price;
+    this.rate = rate;
+    this.rateCount = rateCount;
+    this.description = description;
+    this.color = color;
+    this.img = img;
+  }
+}
+
+// Default Items
+
+const cp1 = new CartProduct(
+  "Apple iPhone 14 Pro",
+  1999.0,
+  5.0,
+  121,
+  "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.",
+  "#bebec6",
+  "img/image 16 (2).png",
+  1
+);
+
+const cp2 = new CartProduct(
+  "Asus ROG Delta S",
+  250.0,
+  5.0,
+  121,
+  "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.",
+  "#bebec6",
+  "img/image 25 (2).png",
+  1
+);
+
+//Cart Product List
+var cartProductList = [];
+cartProductList.push(cp1);
+cartProductList.push(cp2);
+
+// Add to cart UI
+
+function changeProductNumber(btn) {
+  let num = document.getElementById("product-number").textContent;
+  num = parseInt(num);
+  if (btn == "product-num-plus") {
+    document.getElementById("product-number").innerHTML = `${num + 1}`;
+  }
+
+  if (btn == "product-num-minus") {
+    if (num != 0) {
+      document.getElementById("product-number").innerHTML = `${num - 1}`;
+    }
+  }
+}
+
+function addCart() {
+  productName = document.getElementById("product-name");
+  productPrice = document.getElementById("spec-price");
+  productNumber = document.getElementById("product-number");
+  cart0 = document.getElementById("cart-item-0");
+  cart1 = document.getElementById("cart-item-1");
+
+  product = new CartProduct(
+    productName,
+    productPrice,
+    0.0,
+    0,
+    null,
+    null,
+    "img/image 16 (2).png"
+  );
+
+  for (let i = 0; i < cartProductList.length; i++) {
+    if (JSON.stringify(cartProductList[i]) === JSON.stringify(product)) {
+    }
+  }
+}

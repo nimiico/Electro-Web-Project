@@ -900,18 +900,22 @@
 
 .color1 {
   background-color: #bebec6;
+  cursor: pointer;
 }
 
 .color2 {
   background-color: #304fbe;
+  cursor: pointer;
 }
 
 .color3 {
   background-color: #101316;
+  cursor: pointer;
 }
 
 .color4 {
   background-color: #5d30be;
+  cursor: pointer;
 }
 
 .add-cart-box {
@@ -947,6 +951,11 @@
   text-align: center;
   padding: 1.3rem 1.7rem;
   border: none;
+}
+
+#product-num-minus,
+#product-num-plus {
+  cursor: pointer;
 }
 
 .add-cart-box ion-icon[name="heart-outline"] {

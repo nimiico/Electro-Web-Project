@@ -44,17 +44,26 @@
             <div class="header-icon-box">
               <ion-icon name="search-outline"></ion-icon>
               <ion-icon name="heart-outline"></ion-icon>
-              <button id="cart-btn" class="cart-btn">
+              <button
+                id="cart-btn"
+                onclick="popups('cart-modal', 'cart-btn')"
+                class="cart-btn"
+              >
                 <ion-icon name="cart-outline"></ion-icon>
                 <div class="number-cart">2</div>
               </button>
-              <button id="login-btn-icon" class="cart-btn login-btn-icon">
+              <button
+                id="login-btn-icon"
+                class="cart-btn login-btn-icon"
+                onclick="popups('login-view', 'login-btn-icon')"
+              >
                 <ion-icon name="log-in-outline"></ion-icon>
               </button>
             </div>
             <button
               id="header-login-btn"
               class="login-btn action-btn Body-1-Regular"
+              onclick="popups('login-view', 'header-login-btn')"
             >
               Login
             </button>
@@ -908,7 +917,11 @@
     </div>
     <!-------------------------------- login view ------------------------------>
     <div id="login-view" class="login-view">
-      <button id="close-btn" class="close-box">
+      <button
+        id="close-btn"
+        class="close-box"
+        onclick="popups('login-view', 'close-btn')"
+      >
         <ion-icon name="close-outline"></ion-icon>
       </button>
       <div class="login-signup-box">
@@ -920,11 +933,19 @@
           <div class="input-form-box general-grid">
             <div>
               <label class="label" for="email">Email Address</label>
-              <input id="email" placeholder="kristin.watson@example.com" />
+              <input
+                type="email"
+                id="email"
+                placeholder="kristin.watson@example.com"
+              />
             </div>
             <div>
               <label class="label" for="password">Password</label>
-              <input id="password" placeholder="••••••••••••••••••" />
+              <input
+                type="password"
+                id="password"
+                placeholder="••••••••••••••••••"
+              />
             </div>
           </div>
         </form>
@@ -933,7 +954,11 @@
             <input type="checkbox" id="remember" name="remember" checked />
             <label for="remember" class="Body-1-Regular">Remember Me</label>
           </div>
-          <button id="forget-btn" class="forget-btn">
+          <button
+            id="forget-btn"
+            class="forget-btn"
+            onclick="popups('success-view', 'forget-btn')"
+          >
             <p class="Body-2-Regular">Forgot Password?</p>
           </button>
         </div>
@@ -941,7 +966,11 @@
           <button id="log-login-btn" class="action-btn log-login-btn">
             Login
           </button>
-          <button id="log-register-btn" class="log-register-btn">
+          <button
+            id="log-register-btn"
+            onclick="popups('signup-view','log-register-btn')"
+            class="log-register-btn"
+          >
             Register
           </button>
         </div>
@@ -960,7 +989,11 @@
     </div>
     <!-------------------------------- signup view ------------------------------>
     <div id="signup-view" class="signup-view">
-      <button id="s-close-btn" class="s-close-box">
+      <button
+        id="s-close-btn"
+        class="s-close-box"
+        onclick="popups('signup-view', 's-close-btn')"
+      >
         <ion-icon name="close-outline"></ion-icon>
       </button>
       <div class="login-signup-box">
@@ -991,7 +1024,11 @@
           </div>
         </form>
         <div class="btn-form-box general-grid">
-          <button id="reg-register-btn" class="reg-register-btn">
+          <button
+            id="reg-register-btn"
+            class="reg-register-btn"
+            onclick="popups('otp-view','reg-register-btn' )"
+          >
             Register
           </button>
         </div>
@@ -1010,7 +1047,11 @@
     </div>
     <!-------------------------------- otp view ------------------------------>
     <div id="otp-view" class="otp-view">
-      <button id="otp-close-btn" class="otp-close-box">
+      <button
+        id="otp-close-btn"
+        class="otp-close-box"
+        onclick="popups('otp-view', 'otp-close-btn')"
+      >
         <ion-icon name="close-outline"></ion-icon>
       </button>
       <div class="login-signup-box">
@@ -1047,7 +1088,11 @@
             Your password has been updated successfully
           </p>
         </div>
-        <button id="success-Change-pass-btn" class="success-Change-pass-btn">
+        <button
+          id="success-Change-pass-btn"
+          class="success-Change-pass-btn"
+          onclick="popups('login-view', 'success-Change-pass-btn')"
+        >
           Back to Login
         </button>
       </div>

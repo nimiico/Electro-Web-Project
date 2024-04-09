@@ -2,99 +2,85 @@
 //***** MODAL *****///////
 /////////////////////////
 
-var modal = document.getElementById("modal");
+var modalBack = document.getElementById("modal");
 var cartModal = document.getElementById("cart-modal");
-var cartBtn = document.getElementById("cart-btn");
-
 var loginView = document.getElementById("login-view");
-var headerLoginBtn = document.getElementById("header-login-btn");
-var loginBtnIcon = document.getElementById("login-btn-icon");
-var closeBtn = document.getElementById("close-btn");
-var logLoginBtn = document.getElementById("log-login-btn");
-var logRegisterBtn = document.getElementById("log-register-btn");
-var forgetBtn = document.getElementById("forget-btn");
-
 var signupView = document.getElementById("signup-view");
-var sCloseBtn = document.getElementById("s-close-btn");
-var regRegisterBtn = document.getElementById("reg-register-btn");
-
 var otpView = document.getElementById("otp-view");
-var otpCloseBtn = document.getElementById("otp-close-btn");
-var sendOtp = document.getElementById("send-otp");
-
 var successView = document.getElementById("success-view");
-var successChangePassBtn = document.getElementById("success-Change-pass-btn");
+
+function popups(modal, button) {
+  var modal = document.getElementById(modal);
+  if (button == "cart-btn") {
+    modalBack.style.display = "block";
+    modal.style.display = "flex";
+  }
+
+  if (button == "login-btn-icon") {
+    modalBack.style.display = "block";
+    modal.style.display = "flex";
+  }
+
+  if (button == "header-login-btn") {
+    modalBack.style.display = "block";
+    modal.style.display = "flex";
+  }
+
+  if (button == "header-login-btn") {
+    modalBack.style.display = "block";
+    modal.style.display = "flex";
+  }
+
+  if (button == "log-register-btn") {
+    loginView.style.display = "none";
+    modalBack.style.display = "block";
+    modal.style.display = "flex";
+  }
+
+  if (button == "reg-register-btn") {
+    signupView.style.display = "none";
+    modalBack.style.display = "block";
+    modal.style.display = "block";
+  }
+
+  if (button == "forget-btn") {
+    loginView.style.display = "none";
+    modalBack.style.display = "block";
+    modal.style.display = "block";
+  }
+
+  if (button == "success-Change-pass-btn") {
+    successView.style.display = "none";
+    modalBack.style.display = "block";
+    modal.style.display = "block";
+  }
+
+  if (button == "close-btn") {
+    modal.style.display = "none";
+    modalBack.style.display = "none";
+  }
+
+  if (button == "s-close-btn") {
+    modal.style.display = "none";
+    modalBack.style.display = "none";
+  }
+
+  if (button == "otp-close-btn") {
+    modal.style.display = "none";
+    modalBack.style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    if (event.target == modalBack) {
+      modalBack.style.display = "none";
+      modal.style.display = "none";
+    }
+  };
+}
 
 ///////////////////////////
-//***** CART MODAL *****//
+//***** OTP *****//
 /////////////////////////
-
-cartBtn.onclick = function () {
-  modal.style.display = "block";
-
-  cartModal.style.display = "flex";
-};
-
-///////////////////////////
-//***** LOGIN MODAL *****//
-/////////////////////////
-
-headerLoginBtn.onclick = function () {
-  modal.style.display = "block";
-  loginView.style.display = "flex";
-};
-
-loginBtnIcon.onclick = function () {
-  modal.style.display = "block";
-  loginView.style.display = "flex";
-};
-
-closeBtn.onclick = function () {
-  modal.style.display = "none";
-  loginView.style.display = "none";
-};
-
-logLoginBtn.onclick = function () {
-  modal.style.display = "none";
-  loginView.style.display = "none";
-};
-
-logRegisterBtn.onclick = function () {
-  loginView.style.display = "none";
-  signupView.style.display = "block";
-};
-
-forgetBtn.onclick = function () {
-  loginView.style.display = "none";
-  successView.style.display = "block";
-};
-/////////////////////////////
-//***** SIGNUP MODAL *****//
-///////////////////////////
-
-sCloseBtn.onclick = function () {
-  modal.style.display = "none";
-  signupView.style.display = "none";
-};
-
-regRegisterBtn.onclick = function () {
-  signupView.style.display = "none";
-  otpView.style.display = "block";
-};
-
-/////////////////////////////
-//***** OTP MODAL *****//
-///////////////////////////
-
-otpCloseBtn.onclick = function () {
-  modal.style.display = "none";
-  otpView.style.display = "none";
-};
-
-sendOtp.onclick = function () {
-  modal.style.display = "none";
-  otpView.style.display = "none";
-};
 
 const input = document.querySelectorAll(".input");
 const inputField = document.querySelector(".inputfield");
@@ -168,33 +154,9 @@ const startInput = () => {
 
 window.onload = startInput();
 
-///////////////////////////////////////////////
-//***** SUCCESS PASSWORD CHANGED MODAL *****//
-/////////////////////////////////////////////
-
-successChangePassBtn.onclick = function () {
-  successView.style.display = "none";
-  loginView.style.display = "block";
-};
-
-///////////////////////////////////
-//***** WINDOW CLOSE MODAL *****//
-/////////////////////////////////
-
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    cartModal.style.display = "none";
-    loginView.style.display = "none";
-    signupView.style.display = "none";
-    otpView.style.display = "none";
-    successView.style.display = "none";
-  }
-};
-
-/////////////////////////////////////////
-// MOBILE NAVIGATION MENU //////////////
-////////////////////////////////////////
+// /////////////////////////////////////////
+// // MOBILE NAVIGATION MENU //////////////
+// ////////////////////////////////////////
 
 const btnNavEl = document.querySelector(".btn-mobile-nav");
 const headerEl = document.querySelector(".header");
@@ -203,21 +165,13 @@ btnNavEl.addEventListener("click", function () {
   headerEl.classList.toggle("nav-open");
 });
 
-///////////////////////////////////
-//***** TABS *****//
-/////////////////////////////////
+// ///////////////////////////////////
+// //***** TABS *****//
+// /////////////////////////////////
 
 const tabHeadingAll = document.querySelectorAll(".tab-heading");
 
 const tabContentAll = document.querySelectorAll(".tab-content");
-
-const topsellerTabHeadingAll = document.querySelectorAll(
-  ".topseller-tab-heading"
-);
-
-const topsellerTabContentAll = document.querySelectorAll(
-  ".topseller-tab-content"
-);
 
 const removeAllActive = () => {
   tabContentAll.forEach((c) => {
@@ -235,6 +189,14 @@ tabHeadingAll.forEach((h, i) => {
     h.classList.add("active");
   });
 });
+
+const topsellerTabHeadingAll = document.querySelectorAll(
+  ".topseller-tab-heading"
+);
+
+const topsellerTabContentAll = document.querySelectorAll(
+  ".topseller-tab-content"
+);
 
 const topsellerRemoveAllActive = () => {
   topsellerTabContentAll.forEach((c) => {

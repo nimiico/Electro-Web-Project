@@ -1124,15 +1124,15 @@
   display: flex;
 }
 
-.your-rate img:nth-child(1) {
+.your-rate div:nth-child(1) {
   padding-right: 1rem;
 }
 
-.your-rate img:not(:nth-child(1)) {
+.your-rate div:not(:nth-child(1)) {
   padding: 0 1rem;
 }
 
-.your-rate img:not(:nth-child(5)) {
+.your-rate div:not(:nth-child(5)) {
   border-right: 1px solid #a5a9ac33;
 }
 

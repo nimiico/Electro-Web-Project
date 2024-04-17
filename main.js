@@ -1,6 +1,7 @@
 ///////////////////////////
 //***** MODAL *****///////
 /////////////////////////
+"use strict";
 
 var modalBack = document.getElementById("modal");
 var cartModal = document.getElementById("cart-modal");
@@ -316,25 +317,84 @@ function changeProductNumber(btn) {
   }
 }
 
+// function addCart() {
+//   productName = document.getElementById("product-name");
+//   productPrice = document.getElementById("spec-price");
+//   productNumber = document.getElementById("product-number");
+//   cart0 = document.getElementById("cart-item-0");
+//   cart1 = document.getElementById("cart-item-1");
+
+//   product = new CartProduct(
+//     productName,
+//     productPrice,
+//     0.0,
+//     0,
+//     null,
+//     null,
+//     "img/image 16 (2).png"
+//   );
+
+//   for (let i = 0; i < cartProductList.length; i++) {
+//     if (JSON.stringify(cartProductList[i]) === JSON.stringify(product)) {
+//     }
+//   }
+// }
+
 function addCart() {
-  productName = document.getElementById("product-name");
-  productPrice = document.getElementById("spec-price");
-  productNumber = document.getElementById("product-number");
-  cart0 = document.getElementById("cart-item-0");
-  cart1 = document.getElementById("cart-item-1");
+  var cartNumber = document.getElementById("number-cart").textContent;
+  cartNumber = parseInt(cartNumber);
+  var productNumber = document.getElementById("product-number").textContent;
+  productNumber = parseInt(productNumber);
+  cartNumber += productNumber;
+  document.getElementById("number-cart").innerHTML = cartNumber;
+}
 
-  product = new CartProduct(
-    productName,
-    productPrice,
-    0.0,
-    0,
-    null,
-    null,
-    "img/image 16 (2).png"
-  );
+let rate = 0;
+function getStar(star) {
+  const star1 = document.createElement("img");
+  star1.style.margin = "0 1.7px 0 0";
+  star1.src = "img/Star2.png";
 
-  for (let i = 0; i < cartProductList.length; i++) {
-    if (JSON.stringify(cartProductList[i]) === JSON.stringify(product)) {
-    }
+  const star2 = document.createElement("img");
+  star2.style.margin = "0 1.7px 0 0";
+  star2.src = "img/Star2.png";
+
+  const star3 = document.createElement("img");
+  star3.style.margin = "0 1.7px 0 0";
+  star3.src = "img/Star2.png";
+
+  const star4 = document.createElement("img");
+  star4.style.margin = "0 1.7px 0 0";
+  star4.src = "img/Star2.png";
+
+  const star5 = document.createElement("img");
+  star5.src = "img/Star2.png";
+
+  if (star == "star-1") {
+    const parent = document.getElementById("star-1-box");
+    parent.replaceChildren(star1);
+    rate = 1;
+  } else if (star == "star-2") {
+    const parent = document.getElementById("star-2-box");
+    parent.replaceChildren(star1, star2);
+    rate = 2;
+  } else if (star == "star-3") {
+    const parent = document.getElementById("star-3-box");
+    parent.replaceChildren(star1, star2, star3);
+    rate = 3;
+  } else if (star == "star-4") {
+    const parent = document.getElementById("star-4-box");
+    parent.replaceChildren(star1, star2, star3, star4);
+    rate = 4;
+  } else if (star == "star-5") {
+    const parent = document.getElementById("star-5-box");
+    parent.replaceChildren(star1, star2, star3, star4, star5);
+    rate = 5;
   }
+}
+
+function reviewSubmit() {
+  let firstName = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  console.log(`${firstName} | ${email}: ${rate} star`);
 }

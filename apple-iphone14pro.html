@@ -51,7 +51,7 @@
                 class="cart-btn"
               >
                 <ion-icon name="cart-outline"></ion-icon>
-                <div class="number-cart">2</div>
+                <div class="number-cart" id="number-cart">2</div>
               </button>
               <button
                 id="login-btn-icon"
@@ -160,7 +160,8 @@
                   <ion-icon id="product-num-plus" name="add-outline"
                   onclick="changeProductNumber('product-num-plus')"></ion-icon>
                 </div>
-                 <button class="add-cart-btn">Add to Cart</button>
+                 <button class="add-cart-btn" 
+                 onclick="addCart()">Add to Cart</button>
                  <ion-icon name="heart-outline"></ion-icon>
               </div>
               <div class="spec-share-box general-grid">
@@ -252,16 +253,35 @@
                   </div>
                   <div class="your-review general-grid">
                     <h6 class="Header-6-Bold">Add your Review</h6>
-                    <form class="your-review-fields general-grid" >
+                    <div class="your-review-fields general-grid" >
                       <div class="your-rating general-grid">
                         <p class="Body-1-Regular">Your Rating</p>
-                        <div class="your-rate">
-                          <img  class="star-1" src="img/star.png" alt="star">
-                          <img src="img/Frame 1000001052.png" alt="star">
-                          <img src="img/Frame 1000001053.png" alt="star">
-                          <img src="img/Frame 1000001054.png" alt="star">
-                          <img src="img/Frame 1000001055.png" alt="star">
-                        </div>
+                        <div id="your-rate" class="your-rate">
+                          <div id="star-1-box" onclick="getStar('star-1')">
+                            <img class="star-1" src="img/star.png" alt="star">
+                          </div>
+                          <div id="star-2-box" onclick="getStar('star-2')">
+                            <img src="img/star.png" alt="star">
+                            <img src="img/star.png" alt="star">
+                          </div>
+                          <div id="star-3-box" onclick="getStar('star-3')">
+                            <img src="img/star.png" alt="star">
+                            <img src="img/star.png" alt="star">
+                            <img src="img/star.png" alt="star">
+                          </div>
+                          <div id="star-4-box" onclick="getStar('star-4')">
+                            <img src="img/star.png" alt="star">
+                            <img src="img/star.png" alt="star">
+                            <img src="img/star.png" alt="star">
+                            <img src="img/star.png" alt="star">
+                          </div>
+                          <div id="star-5-box" onclick="getStar('star-5')">
+                            <img src="img/star.png" alt="star">
+                            <img src="img/star.png" alt="star">
+                            <img src="img/star.png" alt="star">
+                            <img src="img/star.png" alt="star">
+                            <img src="img/star.png" alt="star">
+                          </div>
                       </div>
                       <div class="your-inputs general-grid">
                         <div>
@@ -277,8 +297,10 @@
                           <textarea name="review" id="review" cols="30" rows="4" placeholder="Enter Your Review"></textarea>
                         </div>
                       </div>
-                      <button class="review-subnit-btn">Submit</button>
-                    </form>
+                      <button
+                     class="review-subnit-btn"
+                     onclick="reviewSubmit()">Submit</button>
+                    </div>
                   </div>
                 </div>
               </div>

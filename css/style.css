@@ -1140,6 +1140,10 @@
   gap: 2rem;
 }
 
+.star-box {
+  cursor: pointer;
+}
+
 .your-inputs textarea,
 .your-inputs input {
   width: 100%;

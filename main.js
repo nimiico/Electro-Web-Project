@@ -340,56 +340,55 @@ function changeProductNumber(btn) {
 //   }
 // }
 
+// number of cart
 function addCart() {
   var cartNumber = document.getElementById("number-cart").textContent;
   cartNumber = parseInt(cartNumber);
+  var qty = document.getElementById("qty").textContent;
+  qty = qty.substring(5);
+  qty = parseInt(qty);
   var productNumber = document.getElementById("product-number").textContent;
   productNumber = parseInt(productNumber);
   cartNumber += productNumber;
+  qty += productNumber;
   document.getElementById("number-cart").innerHTML = cartNumber;
+  document.getElementById("qty").innerHTML = `QTY: ${qty}`;
 }
 
+//remove from cart
+function removeCart(i) {
+  // remove = document.getElementsByClassName("remove-cart")[i];
+  let cartItem = document.getElementsByClassName("cart-item")[i];
+
+  cartItem.style.display = "none";
+  var cartNumber = document.getElementById("number-cart").textContent;
+  cartNumber = parseInt(cartNumber);
+  var qty = document.getElementById("qty").textContent;
+  qty = qty.substring(5);
+  qty = parseInt(qty);
+  cartNumber -= qty;
+  document.getElementById("number-cart").innerHTML = cartNumber;
+  let itemsNum = document.getElementById("items-num").textContent;
+  itemsNum = itemsNum.substring(0, 1);
+  itemsNum = parseInt(itemsNum);
+  itemsNum -= 1;
+  document.getElementById("items-num").innerHTML = `${itemsNum} items`;
+}
+
+// rating
 let rate = 0;
-function getStar(star) {
-  const star1 = document.createElement("img");
-  star1.style.margin = "0 1.7px 0 0";
-  star1.src = "img/Star2.png";
+function getStar(i) {
+  rate = i + 1;
+  let starBox = document.getElementsByClassName("star-box")[i];
+  let star = starBox.getElementsByTagName("img");
+  let yourRate = document.getElementById("your-rate");
+  let offStar = yourRate.getElementsByTagName("img");
 
-  const star2 = document.createElement("img");
-  star2.style.margin = "0 1.7px 0 0";
-  star2.src = "img/Star2.png";
-
-  const star3 = document.createElement("img");
-  star3.style.margin = "0 1.7px 0 0";
-  star3.src = "img/Star2.png";
-
-  const star4 = document.createElement("img");
-  star4.style.margin = "0 1.7px 0 0";
-  star4.src = "img/Star2.png";
-
-  const star5 = document.createElement("img");
-  star5.src = "img/Star2.png";
-
-  if (star == "star-1") {
-    const parent = document.getElementById("star-1-box");
-    parent.replaceChildren(star1);
-    rate = 1;
-  } else if (star == "star-2") {
-    const parent = document.getElementById("star-2-box");
-    parent.replaceChildren(star1, star2);
-    rate = 2;
-  } else if (star == "star-3") {
-    const parent = document.getElementById("star-3-box");
-    parent.replaceChildren(star1, star2, star3);
-    rate = 3;
-  } else if (star == "star-4") {
-    const parent = document.getElementById("star-4-box");
-    parent.replaceChildren(star1, star2, star3, star4);
-    rate = 4;
-  } else if (star == "star-5") {
-    const parent = document.getElementById("star-5-box");
-    parent.replaceChildren(star1, star2, star3, star4, star5);
-    rate = 5;
+  for (let j = 0; j < offStar.length; j++) {
+    offStar[j].src = "img/star.png";
+  }
+  for (let j = 0; j < i + 1; j++) {
+    star[j].src = "img/Star2.png";
   }
 }
 

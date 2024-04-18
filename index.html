@@ -50,7 +50,7 @@
                 class="cart-btn"
               >
                 <ion-icon name="cart-outline"></ion-icon>
-                <div class="number-cart">2</div>
+                <div id="number-cart" class="number-cart">2</div>
               </button>
               <button
                 id="login-btn-icon"
@@ -877,7 +877,8 @@
     <div id="cart-modal" class="cart-modal">
       <div class="cart-items-box general-grid">
         <p class="Body-1-Regular">
-          You have <span class="Body-1-Bold">2 items</span> in your cart
+          You have <span id="items-num" class="Body-1-Bold">2 items</span> in
+          your cart
         </p>
         <div class="cart-items general-grid">
           <div class="cart-item general-grid">
@@ -886,9 +887,13 @@
             </div>
             <div class="cart-item-content general-grid grid--2-cols">
               <p class="Body-2-Regular cart-item-title">Apple iPhone 14 Pro</p>
-              <p class="Body-2-Bold">$1999.00</p>
-              <p class="Body-2-Regular">QTY: 1</p>
-              <ion-icon name="trash-outline"></ion-icon>
+              <p id="cart-item-0" class="Body-2-Bold">$1999.00</p>
+              <p id="qty" class="Body-2-Regular">QTY: 1</p>
+              <ion-icon
+                onclick="removeCart(0)"
+                class="remove-cart"
+                name="trash-outline"
+              ></ion-icon>
             </div>
           </div>
           <div class="cart-item general-grid">
@@ -899,7 +904,11 @@
               <p class="Body-2-Regular cart-item-title">Asus ROG Delta S</p>
               <p class="Body-2-Bold">$250.00</p>
               <p class="Body-2-Regular">QTY: 1</p>
-              <ion-icon name="trash-outline"></ion-icon>
+              <ion-icon
+                onclick="removeCart(1)"
+                class="remove-cart"
+                name="trash-outline"
+              ></ion-icon>
             </div>
           </div>
         </div>

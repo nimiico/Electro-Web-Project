@@ -353,6 +353,20 @@ function addCart() {
   qty += productNumber;
   document.getElementById("number-cart").innerHTML = cartNumber;
   document.getElementById("qty").innerHTML = `QTY: ${qty}`;
+
+  var p0 = document.getElementById("cart-item-0").textContent;
+  p0 = p0.substring(1);
+  p0 = parseFloat(p0);
+  p0 = 0.0;
+  p0 = qty * 1999.0;
+  document.getElementById("cart-item-0").innerHTML = `$${p0}`;
+
+  var subtotal = document.getElementById("subtotal-price").textContent;
+  subtotal = subtotal.substring(1);
+  subtotal = parseFloat(subtotal);
+  subtotal = 0.0;
+  subtotal = 250 + p0;
+  document.getElementById("subtotal-price").innerHTML = `$${subtotal}`;
 }
 
 //remove from cart
@@ -366,8 +380,32 @@ function removeCart(i) {
   var qty = document.getElementById("qty").textContent;
   qty = qty.substring(5);
   qty = parseInt(qty);
-  cartNumber -= qty;
+
+  var p0 = document.getElementById("cart-item-0").textContent;
+  p0 = p0.substring(1);
+  p0 = parseFloat(p0);
+
+  var p1 = document.getElementById("cart-item-1").textContent;
+  p1 = p1.substring(1);
+  p1 = parseFloat(p1);
+
+  var subtotal = document.getElementById("subtotal-price").textContent;
+  subtotal = subtotal.substring(1);
+  subtotal = parseFloat(subtotal);
+
+  ////number of cart and subtotal price
+  if (i == 0) {
+    subtotal -= p0;
+    cartNumber -= qty;
+  } else {
+    subtotal -= p1;
+    cartNumber -= 1;
+  }
+
+  document.getElementById("subtotal-price").innerHTML = `$${subtotal}`;
   document.getElementById("number-cart").innerHTML = cartNumber;
+
+  //item numbers in cart
   let itemsNum = document.getElementById("items-num").textContent;
   itemsNum = itemsNum.substring(0, 1);
   itemsNum = parseInt(itemsNum);

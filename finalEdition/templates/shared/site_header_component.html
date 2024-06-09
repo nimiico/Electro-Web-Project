@@ -1,0 +1,84 @@
+<header class="header">
+      <div class="container header-container">
+        <div class="header-first-row">
+          <img src="/static/img/Group 427319094.png" alt="Electro Logo" class="Logo" />
+          <div class="header-search-box">
+            <select name="all" id="all" class="all-select Body-1-Regular">
+              <option value="All">
+                <a href="#">All</a>
+              </option>
+            </select>
+            <div class="search-input-box">
+              <ion-icon name="search-outline"></ion-icon>
+              <input
+                class="search-input Body-1-Regular"
+                type="text"
+                placeholder="Search"
+              />
+            </div>
+            <button class="search-btn action-btn Body-1-Regular">Search</button>
+          </div>
+          <div class="header-icon-container">
+            <div class="header-icon-box">
+              <ion-icon name="search-outline"></ion-icon>
+              <ion-icon name="heart-outline"></ion-icon>
+              <button
+                id="cart-btn"
+                onclick="popups('cart-modal', 'cart-btn')"
+                class="cart-btn"
+              >
+                <ion-icon name="cart-outline"></ion-icon>
+                <div id="number-cart" class="number-cart">2</div>
+              </button>
+              <button
+                id="login-btn-icon"
+                class="cart-btn login-btn-icon"
+                onclick="popups('login-view', 'login-btn-icon')"
+              >
+                <ion-icon name="log-in-outline"></ion-icon>
+              </button>
+            </div>
+            <button
+              id="header-login-btn"
+              class="login-btn action-btn Body-1-Regular"
+              onclick="popups('login-view', 'header-login-btn')"
+            >
+              Login
+            </button>
+            <button class="btn-mobile-nav">
+              <ion-icon name="menu-outline" class="icon-mobile-nav"></ion-icon>
+              <ion-icon name="close-outline" class="icon-mobile-nav"></ion-icon>
+            </button>
+          </div>
+        </div>
+        <div class="header-second-row">
+          <div class="header-categories">
+            <ion-icon name="menu-outline"></ion-icon>
+            <select
+              name="Categories"
+              id="Categories"
+              class="categories-select Body-1-Regular"
+            >
+              <option value="All Categories">
+                <a href="#">All Categories</a>
+              </option>
+            </select>
+          </div>
+          <nav class="main-nav">
+            <ul class="main-nav-list">
+              <li><a class="main-nav-link" href="#">Home</a></li>
+              <li>
+                <select name="Shop" id="Shop" class="nav-shop">
+                  <option value="Shop">
+                    <a href="#">Shop</a>
+                  </option>
+                </select>
+              </li>
+              <li><a class="main-nav-link" href="#">About Us</a></li>
+              <li><a class="main-nav-link" href="#">Blog</a></li>
+              <li><a class="main-nav-link" href="#">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>

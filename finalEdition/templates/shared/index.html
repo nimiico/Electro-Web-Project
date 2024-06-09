@@ -1,0 +1,35 @@
+{% load render_partial %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electro</title>
+      {% include 'shared/header_references.html' %}
+  </head>
+  <body>
+    {% render_partial 'home_module.views.site_header_component' %}
+
+    {% block main %}{% endblock %}
+
+    {% render_partial 'home_module.views.site_footer_component' %}
+
+    <div id="modal" class="modal"></div>
+    {% render_partial 'home_module.views.cart_modal_component' %}
+
+    <!-------------------------------- login view ------------------------------>
+    {% render_partial 'home_module.views.login_modal_component' %}
+
+    <!-------------------------------- signup view ------------------------------>
+   {% render_partial 'home_module.views.signup_modal_component' %}
+
+    <!-------------------------------- otp view ------------------------------>
+    {% render_partial 'home_module.views.otp_modal_component' %}
+
+    <!-------------------------------- success view ------------------------------>
+    {% render_partial 'home_module.views.success_modal_component' %}
+
+    {% include 'shared/footer_references.html' %}
+  </body>
+</html>

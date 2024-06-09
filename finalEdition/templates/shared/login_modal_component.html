@@ -1,0 +1,65 @@
+<div id="login-view" class="login-view">
+  <button
+    id="close-btn"
+    class="close-box"
+    onclick="popups('login-view', 'close-btn')"
+  >
+    <ion-icon name="close-outline"></ion-icon>
+  </button>
+  <div class="login-signup-box">
+    <div class="login-signup-title">
+      <h4 class="Header-4-Bold">Welcome 👋</h4>
+      <p class="Body-1-Regular">Please login here</p>
+    </div>
+    <form  class="login-form" method="post" action="{% url 'index_page' %}">
+        {% csrf_token %}
+        <div>
+          <label class="label" for="email">Email Address</label>
+          {{ login_form.email }}
+          {{ login_form.email.errors }}
+       </div>
+       <div>
+           <label class="label" for="password">Password</label>
+           {{ login_form.password }}
+           {{ login_form.password.errors }}
+       </div>
+      <div class="forget-box">
+          <div class="checkbox-container">
+            {{ login_form.remember_me }}
+            <label for="remember" class="Body-1-Regular">Remember Me</label>
+          </div>
+          <button
+            id="forget-btn"
+            class="forget-btn"
+            onclick="popups('success-view', 'forget-btn')"
+          >
+            <p class="Body-2-Regular">Forgot Password?</p>
+          </button>
+        </div>
+        <div class="btn-form-box general-grid">
+          <button id="log-login-btn" class="action-btn log-login-btn">
+            Login
+          </button>
+          <button
+            id="log-register-btn"
+            onclick="popups('signup-view','log-register-btn')"
+            class="log-register-btn"
+          >
+            Register
+          </button>
+        </div>
+    </form>
+
+    <p class="Body-2-Regular login-with">Or Login With</p>
+    <div class="login-with-btn-box general-grid">
+      <button class="login-with-btn Body-1-Regular login-with-btn">
+        <img src="/static/img/Group 57.png" alt="google icon" />
+        Login with Google
+      </button>
+      <button class="login-with-btn Body-1-Regular login-with-btn">
+        <img src="/static/img/Vector (5).png" alt="apple icon" />
+        Login with Apple
+      </button>
+    </div>
+  </div>
+</div>

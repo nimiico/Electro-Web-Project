@@ -1,0 +1,257 @@
+{% extends 'shared/index.html' %}
+
+{% block main %}
+   <main>
+  <section class="product-details-section section">
+    <div class="container product-details-box">
+      <div class=" path">
+        <p class="Body-2-Regular">Home</p>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <p class="Body-2-Regular">Shop</p>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <p class="Body-2-Regular">Apple iPhone 14 Pro</p>
+      </div>
+      <div class=" product-specification-container general-grid grid--2-cols">
+        <div class="details-img-box">
+          <p class="caption">In Stock</p>
+          <img src="/static/img/image 16 (1).png" alt="iphone 14 pro">
+        </div>
+        <div class="product-imgs product-imgs-mobile">
+          <div>
+            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
+          </div>
+          <div>
+            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
+          </div>
+          <div>
+            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
+          </div>
+          <div>
+            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
+          </div>
+        </div>
+        <div class="specification-content">
+          <p class="caption-Regular">In Stock</p>
+          <h4 id="product-name" class="Header-4-Bold">Apple iPhone 14 Pro</h4>
+          <div class="reviews">
+            <img src="/static/img/Frame 1000000998.png" alt="stars">
+            <p class="Body-1-Regular">5.0 (121 Reviews)</p>
+          </div>
+          <p id="spec-price" class="Header-6-Regular spec-price">$1999.00</p>
+          <p class="Body-1-Regular spec-description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.</p>
+          <div class="spec-color-container general-grid">
+            <p class="Header-7-Bold">Color</p>
+            <div class="spec-color-box">
+              <div id="color1" class="spec-color color1" onclick="colorPrice('color1')"></div>
+              <div id="color2" class="spec-color color2" onclick="colorPrice('color2')"></div>
+              <div id="color3" class="spec-color color3" onclick="colorPrice('color3')"></div>
+              <div id="color4" class="spec-color color4" onclick="colorPrice('color4')"></div>
+            </div>
+          </div>
+          <div class="add-cart-box general-grid ">
+            <div class="product-nums-box">
+              <ion-icon id="product-num-minus" name="remove-outline"
+              onclick="changeProductNumber('product-num-minus')"></ion-icon>
+              <p id="product-number" class="Body-1-Regular">1</p>
+              <ion-icon id="product-num-plus" name="add-outline"
+              onclick="changeProductNumber('product-num-plus')"></ion-icon>
+            </div>
+             <button class="add-cart-btn"
+             onclick="addCart()">Add to Cart</button>
+             <ion-icon name="heart-outline"></ion-icon>
+          </div>
+          <div class="spec-share-box general-grid">
+            <p class="Header-7-Bold">Share</p>
+            <div class="spec-logos-box">
+              <ion-icon name="logo-facebook"></ion-icon>
+              <ion-icon name="logo-twitter"></ion-icon>
+              <ion-icon name="logo-instagram"></ion-icon>
+            </div>
+          </div>
+        </div>
+        <div class="product-imgs">
+          <div>
+            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
+          </div>
+          <div>
+            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
+          </div>
+          <div>
+            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
+          </div>
+          <div>
+            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="product-tab-heading-container">
+          <h6 class="product-tab-heading active Header-6-Regular">Descriptions</h6>
+          <h6 class="product-tab-heading Header-6-Regular">Additional Information</h6>
+          <h6 class="product-tab-heading Header-6-Regular">Reviews</h6>
+        </div>
+        <div class="product-tab-content-container">
+          <div class="product-tab-content active">
+            <p class="Body-1-Regular">t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+              <br><br>
+              Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+          </div>
+          <div class="product-tab-content">
+            <div class="info-cols">
+              <div class="info-col-1 general-grid">
+                <p class="Header-7-Bold">Brand</p>
+                <p class="Header-7-Bold">Item Height</p>
+                <p class="Header-7-Bold">Item Width</p>
+                <p class="Header-7-Bold">Screen Size</p>
+                <p class="Header-7-Bold">Model Number</p>
+                <p class="Header-7-Bold">RAM Size</p>
+                <p class="Header-7-Bold">Operating System</p>
+              </div>
+              <div class="info-col-2 general-grid">
+                <p class="Body-1-Regular">Apple</p>
+                <p class="Body-1-Regular">65 CM</p>
+                <p class="Body-1-Regular">31.4 CM</p>
+                <p class="Body-1-Regular">6.5 Inch</p>
+                <p class="Body-1-Regular">MF841HN/A</p>
+                <p class="Body-1-Regular">6 GB</p>
+                <p class="Body-1-Regular">ios 17</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-tab-content">
+            <div class="reviews-box general-grid">
+              <div class="customer-reviews general-grid">
+                <h6 class="Header-6-Bold">Customer Reviews</h6>
+                <div class="review">
+                  <div class="reviewer">
+                    <img src="/static/img/Ellipse 956.png" alt="man">
+                    <div class="reviewer-info">
+                      <p class="Body-1-Regular">Mark Williams</p>
+                      <img src="/static/img/Frame 1000000998 (1).png" alt="star">
+                    </div>
+                  </div>
+                  <p class="Body-1-Bold review-title">Excellent Product, I Love It 😍</p>
+                  <p class="Body-1-Regular review-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                  <p class="Body-2-Regular review-date"><span>Review by</span> Electro <span>Posted on</span> Sep 08, 2023</p>
+                </div>
+                <div class="review">
+                  <div class="reviewer">
+                    <img src="/static/img/Ellipse 957.png" alt="woman">
+                    <div class="reviewer-info">
+                      <p class="Body-1-Regular">Alexa Johnson</p>
+                      <img src="/static/img/Frame 1000000998 (1).png" alt="star">
+                    </div>
+                  </div>
+                  <p class="Body-1-Bold review-title">My Brother is very much happy with this iPhone</p>
+                  <p class="Body-1-Regular review-text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                  <p class="Body-2-Regular review-date"><span>Review by</span> Electro <span>Posted on</span> Sep 08, 2023</p>
+                </div>
+              </div>
+              <div class="your-review general-grid">
+                <h6 class="Header-6-Bold">Add your Review</h6>
+                <div class="your-review-fields general-grid" >
+                  <div class="your-rating general-grid">
+                    <p class="Body-1-Regular">Your Rating</p>
+                    <div id="your-rate" class="your-rate">
+                      <div class="star-box" onclick="getStar(0)">
+                        <img class="star-1" src="/static/img/star.png" alt="star">
+                      </div>
+                      <div class="star-box" onclick="getStar(1)">
+                        <img src="/static/img/star.png" alt="star">
+                        <img src="/static/img/star.png" alt="star">
+                      </div>
+                      <div class="star-box" onclick="getStar(2)">
+                        <img src="/static/img/star.png" alt="star">
+                        <img src="/static/img/star.png" alt="star">
+                        <img src="/static/img/star.png" alt="star">
+                      </div>
+                      <div class="star-box" onclick="getStar(3)">
+                        <img src="/static/img/star.png" alt="star">
+                        <img src="/static/img/star.png" alt="star">
+                        <img src="/static/img/star.png" alt="star">
+                        <img src="/static/img/star.png" alt="star">
+                      </div>
+                      <div class="star-box" onclick="getStar(4)">
+                        <img src="/static/img/star.png" alt="star">
+                        <img src="/static/img/star.png" alt="star">
+                        <img src="/static/img/star.png" alt="star">
+                        <img src="/static/img/star.png" alt="star">
+                        <img src="/static/img/star.png" alt="star">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="your-inputs general-grid">
+                    <div>
+                      <label class="label" for="name">Name</label>
+                      <input id="name" placeholder="Enter Your Name" />
+                    </div>
+                    <div>
+                      <label class="label" for="email">Email Address</label>
+                      <input id="email" placeholder="Enter Your Email" />
+                    </div>
+                    <div>
+                      <label class="label" for="review">Your Review</label>
+                      <textarea name="review" id="review" cols="30" rows="4" placeholder="Enter Your Review"></textarea>
+                    </div>
+                  </div>
+                  <button
+                 class="review-subnit-btn"
+                 onclick="reviewSubmit()">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-related-products">
+    <div class="container related-products-container general-grid">
+      <h3 class="Header-3-Bold">Related Products</h3>
+      <div class="related-post-box general-grid grid--4-cols">
+        <div class="related-post-item grid">
+          <div class="related-img-box ">
+            <img src="/static/img/image 22 (1).png" alt="iphone 14 plus">
+          </div>
+          <div class="related-content-box">
+            <p class="Body-1-Bold related-content-title">Apple iPhone 14 Plus</p>
+            <img src="/static/img/Frame 1000001161 (1).png" alt="star">
+            <p class="Body-1-Regular">$850.00</p>
+          </div>
+        </div>
+        <div class="related-post-item grid">
+          <div class="related-img-box ">
+            <img src="/static/img/image 26 (1).png" alt="Xiaomi Fimi X8 Mini">
+          </div>
+          <div class="related-content-box">
+            <p class="Body-1-Bold related-content-title">Xiaomi Fimi X8 Mini</p>
+            <img src="/static/img/Frame 1000001161 (1).png" alt="star">
+            <p class="Body-1-Regular">$650.00</p>
+          </div>
+        </div>
+        <div class="related-post-item grid">
+          <div class="related-img-box ">
+            <img src="/static/img/image 19 (1).png" alt="Apple iPad Mini 6 Wi-Fi">
+          </div>
+          <div class="related-content-box">
+            <p class="Body-1-Bold related-content-title">Apple iPad Mini 6 Wi-Fi</p>
+            <img src="/static/img/Frame 1000001161 (1).png" alt="star">
+            <p class="Body-1-Regular">$500.00</p>
+          </div>
+        </div>
+        <div class="related-post-item grid">
+          <div class="related-img-box ">
+            <img src="/static/img/image 25 (1).png" alt="Asus ROG Delta S">
+          </div>
+          <div class="related-content-box">
+            <p class="Body-1-Bold related-content-title">AAsus ROG Delta S</p>
+            <img src="/static/img/Frame 1000001161 (1).png" alt="star">
+            <p class="Body-1-Regular">$250.00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}
+

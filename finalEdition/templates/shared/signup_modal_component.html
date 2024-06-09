@@ -1,0 +1,57 @@
+ <div id="signup-view" class="signup-view">
+  <button
+    id="s-close-btn"
+    class="s-close-box"
+    onclick="popups('signup-view', 's-close-btn')"
+  >
+    <ion-icon name="close-outline"></ion-icon>
+  </button>
+  <div class="login-signup-box">
+    <div class="login-signup-title">
+      <h4 class="Header-4-Bold">Create New Account</h4>
+      <p class="Body-1-Regular">Please enter details</p>
+    </div>
+    <form  class="login-form" method="post" action="{% url 'index_page' %}">
+      {% csrf_token %}
+      <div class="input-form-box general-grid">
+        <div>
+          <label class="label" for="name">Name</label>
+            {{ register_form.username }}
+            {{ register_form.username.errors }}
+        </div>
+        <div>
+          <label class="label" for="email">Email Address</label>
+          {{ register_form.email }}
+        </div>
+        <div>
+          <label class="label" for="password">Password</label>
+            {{ register_form.password }}
+        </div>
+        <div class="checkbox-container agree">
+            {{ register_form.agree }}
+          <label for="agree" class="Body-1-Regular">I agree to the Terms & Conditions</label>
+        </div>
+      </div>
+      <div class="btn-form-box general-grid">
+          <button
+            id="reg-register-btn"
+            class="reg-register-btn"
+            onclick="popups('otp-view','reg-register-btn' )">
+            Register
+          </button>
+      </div>
+    </form>
+
+    <p class="Body-2-Regular login-with">Or Login With</p>
+    <div class="login-with-btn-box general-grid">
+      <button class="login-with-btn Body-1-Regular login-with-btn">
+        <img src="/static/img/Group 57.png" alt="google icon" />
+        Login with Google
+      </button>
+      <button class="login-with-btn Body-1-Regular login-with-btn">
+         <img src="/static/img/Vector (5).png" alt="apple icon" />
+        Login with Apple
+      </button>
+    </div>
+  </div>
+</div>

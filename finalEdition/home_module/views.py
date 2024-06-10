@@ -1,12 +1,12 @@
 from datetime import date
 
-from django.db.models import Q
+from django.forms import ImageField
 from django.http import Http404
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from account_module.models import User
 from discount_module.models import DiscountCode
-from product_module.models import Product
+from product_module.models import Product, Image
 from .forms import RegisterForm, LoginForm
 from django.utils.crypto import get_random_string
 from django.contrib.auth import login, logout
@@ -14,21 +14,41 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.utils import timezone
+from django.db.models import F, Q, DecimalField, OuterRef, Subquery, Prefetch
+from django.db.models.functions import Coalesce
 
 
 def index_page(request):
-    # today = timezone.now()
-    #
-    # discounted_products_by_product = Product.objects.filter(
-    #     Q(discountcode__valid_from__lte=today) &
-    #     Q(discountcode__valid_to__gte=today) &
-    #     Q(discountcode__applicable=today) &
-    # )
+    now = timezone.now()
 
-    # print("Is discount code exists:", discount_code_exists)
-    # print("Number of discounted products:", number_of_discounted_products)
+    specific_image_prefetch = Prefetch(
+        'image_set',
+        queryset=Image.objects.filter(title='off-post'),  # عنوان خاص تصویر
+        to_attr='specific_images'
+    )
 
-    return render(request, 'home_module/index_page.html', )
+    discounted_products = Product.objects.filter(
+        Q(discountcode__expiry_date__gt=now) &
+        Q(discountcode__discount_type='percentage') |
+        Q(discountcode__discount_type='amount')
+    ).annotate(
+        discount_type=F('discountcode__discount_type'),
+        discount_value=Coalesce(F('discountcode__discount_amount'), 0, output_field=DecimalField()),
+    ).prefetch_related(specific_image_prefetch).distinct().order_by('-discountcode__discount_amount')[:2]
+
+    for product in discounted_products:
+        print(
+            f'Product Name: {product.name}, Discount Type: {product.discount_type}, Discount Value: {product.discount_value}')
+        if product.specific_images:
+            for image in product.specific_images:
+                print(f'Image URL: {image.image.url}')
+        else:
+            print('No specific image found')
+    context = {
+        'discounted_products': discounted_products
+    }
+
+    return render(request, 'home_module/index_page.html', context)
 
 
 def signup_modal_component(request):

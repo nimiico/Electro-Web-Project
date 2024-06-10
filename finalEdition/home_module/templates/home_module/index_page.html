@@ -80,41 +80,45 @@
           {% for discounted_product in discounted_products %}
               <div class="off-post">
                 <div class="post-content">
-                  <span class="tag">50% OFF</span>
-                  <h4 class="Header-4-Bold post-title">Mackbook Air M2</h4>
+                  <span class="tag">{{ discounted_product.discount_value }}% OFF</span>
+                  <h4 class="Header-4-Bold post-title">{{ discounted_product.title }}</h4>
                   <p class="Header-7-Regular post-description">
                     Don’t miss the last opportunity
                   </p>
                   <a href="#" class="btn">Shop Now &rarr;</a>
                 </div>
                 <div class="post-img-box">
-                  <img
-                    src="/static/img/image 15.png"
-                    alt="Mackbook Air M2"
-                    class="post-img"
-                  />
+                  {% for image in discounted_product.specific_images %}
+                        <img src="{{ image.image.url }}" alt="{{ discounted_product.name }}"  class="post-img">
+                        <!-- Assuming only one specific image, you can break the loop after the first image if needed -->
+                  {% endfor %}
+{#                  <img#}
+{#                    src="{{ discounted_product.product_image.url }}"#}
+{#                    alt="Mackbook Air M2"#}
+{#                    class="post-img"#}
+{#                  />#}
                 </div>
               </div>
           {% endfor %}
 
 
 {#          <div class="off-post">#}
-            <div class="post-content">
-              <span class="tag">50% OFF</span>
-              <h4 class="Header-4-Bold post-title">Iphone 14 Pro</h4>
-              <p class="Header-7-Regular post-description">
-                Don’t miss the last opportunity
-              </p>
-              <a href="{% url 'product-page' %}" class="btn">Shop Now &rarr;</a>
-            </div>
-            <div class="post-img-box">
-              <img
-                src="/static/img/image 16.png"
-                alt="Iphone 14 Pro"
-                class="post-img"
-              />
-            </div>
-          </div>
+{#            <div class="post-content">#}
+{#              <span class="tag">50% OFF</span>#}
+{#              <h4 class="Header-4-Bold post-title">Iphone 14 Pro</h4>#}
+{#              <p class="Header-7-Regular post-description">#}
+{#                Don’t miss the last opportunity#}
+{#              </p>#}
+{#              <a href="{% url 'product-page' %}" class="btn">Shop Now &rarr;</a>#}
+{#            </div>#}
+{#            <div class="post-img-box">#}
+{#              <img#}
+{#                src="/static/img/image 16.png"#}
+{#                alt="Iphone 14 Pro"#}
+{#                class="post-img"#}
+{#              />#}
+{#            </div>#}
+{#          </div>#}
         </div>
       </section>
       <section class="section section-bestseller">

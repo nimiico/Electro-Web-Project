@@ -12,7 +12,7 @@ class DiscountCode(models.Model):
     discount_amount = models.DecimalField(max_digits=10, decimal_places=2)
     max_percentage_discount = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     max_amount_discount = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
-    expiry_date = models.DateField()
+    expiry_date = models.DateTimeField()
     products = models.ManyToManyField(Product, blank=True)
     categories = models.ManyToManyField(Category, blank=True)
 

@@ -22,7 +22,7 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     price_change_date = models.DateTimeField(default=timezone.now)
-    visits = models.PositiveIntegerField(default=0)  # تعداد بازدیدها
+    visits = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -34,8 +34,9 @@ class Product(models.Model):
 
 
 class Image(models.Model):
+    title = models.CharField(max_length=200, null=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='product_images/')
+    image = models.ImageField(upload_to='images/product_gallery')
 
     def __str__(self):
         return f"Image for {self.product.name}"

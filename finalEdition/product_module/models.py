@@ -14,9 +14,10 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
-    description = models.TextField()
+    title = models.CharField(max_length=200, null=True)
+    description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    stock = models.IntegerField()
+    stock = models.BooleanField(default=False)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -28,9 +29,6 @@ class Product(models.Model):
 
     @staticmethod
     def get_popular_products(start_date, end_date):
-        """
-        برگرداندن محصولات پربازدید در یک بازه زمانی دلخواه.
-        """
         popular_products = Product.objects.filter(created_at__range=(start_date, end_date)).order_by('-visits')[:10]
         return popular_products
 

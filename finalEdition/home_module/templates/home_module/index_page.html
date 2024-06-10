@@ -77,25 +77,28 @@
       </section>
       <section class="section section-off">
         <div class="container grid grid--2-cols">
-          <div class="off-post">
-            <div class="post-content">
-              <span class="tag">50% OFF</span>
-              <h4 class="Header-4-Bold post-title">Mackbook Air M2</h4>
-              <p class="Header-7-Regular post-description">
-                Don’t miss the last opportunity
-              </p>
-              <a href="#" class="btn">Shop Now &rarr;</a>
-            </div>
-            <div class="post-img-box">
-              <img
-                src="/static/img/image 15.png"
-                alt="Mackbook Air M2"
-                class="post-img"
-              />
-            </div>
-          </div>
+          {% for discounted_product in discounted_products %}
+              <div class="off-post">
+                <div class="post-content">
+                  <span class="tag">50% OFF</span>
+                  <h4 class="Header-4-Bold post-title">Mackbook Air M2</h4>
+                  <p class="Header-7-Regular post-description">
+                    Don’t miss the last opportunity
+                  </p>
+                  <a href="#" class="btn">Shop Now &rarr;</a>
+                </div>
+                <div class="post-img-box">
+                  <img
+                    src="/static/img/image 15.png"
+                    alt="Mackbook Air M2"
+                    class="post-img"
+                  />
+                </div>
+              </div>
+          {% endfor %}
 
-          <div class="off-post">
+
+{#          <div class="off-post">#}
             <div class="post-content">
               <span class="tag">50% OFF</span>
               <h4 class="Header-4-Bold post-title">Iphone 14 Pro</h4>

@@ -85,12 +85,11 @@
                   <p class="Header-7-Regular post-description">
                     Don’t miss the last opportunity
                   </p>
-                  <a href="#" class="btn">Shop Now &rarr;</a>
+                  <a href="{{ discounted_product.get_absolute_url }}" class="btn">Shop Now &rarr;</a>
                 </div>
                 <div class="post-img-box">
                   {% for image in discounted_product.specific_images %}
                         <img src="{{ image.image.url }}" alt="{{ discounted_product.name }}"  class="post-img">
-                        <!-- Assuming only one specific image, you can break the loop after the first image if needed -->
                   {% endfor %}
 {#                  <img#}
 {#                    src="{{ discounted_product.product_image.url }}"#}
@@ -380,17 +379,17 @@
 
       <section class="section section-opportunity opportunity-container">
         <img
-          src="/static/img/howard-bouchevereau-2Q-pPfHZHyo-unsplash 1.png"
+          src="{{ banner_images.image.url }}"
           alt="iphone 13 pro"
         />
         <div class="post-content opportunity-content">
           <h3 class="Header-3-Bold post-title opportunity-title">
-            Apple iPhone 13 Pro Max
+              {{ banner_products.name }}
           </h3>
           <p class="Header-7-Regular post-description opportunity-description">
             Don’t miss the last opportunity
           </p>
-          <a href="#" class="btn opportunity-btn">Shop Now &rarr;</a>
+          <a href="{{ banner_products.get_absolute_url }}" class="btn opportunity-btn">Shop Now &rarr;</a>
         </div>
       </section>
       <section class="section section-topseller">

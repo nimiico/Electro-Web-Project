@@ -14,31 +14,24 @@
       <div class=" product-specification-container general-grid grid--2-cols">
         <div class="details-img-box">
           <p class="caption">In Stock</p>
-          <img src="/static/img/image 16 (1).png" alt="iphone 14 pro">
+          <img src="{{ product_images.image.url }}" alt="Image for {{ product.name }}">
         </div>
         <div class="product-imgs product-imgs-mobile">
-          <div>
-            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
-          </div>
-          <div>
-            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
-          </div>
-          <div>
-            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
-          </div>
-          <div>
-            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
-          </div>
+          {% for _ in repeat_times %}
+                <div>
+                    <img src="{{ product_images.image.url }}" alt="Image for {{ product.name }}">
+                </div>
+            {% endfor %}
         </div>
         <div class="specification-content">
           <p class="caption-Regular">In Stock</p>
-          <h4 id="product-name" class="Header-4-Bold">Apple iPhone 14 Pro</h4>
+          <h4 id="product-name" class="Header-4-Bold">{{ product.name }}</h4>
           <div class="reviews">
             <img src="/static/img/Frame 1000000998.png" alt="stars">
             <p class="Body-1-Regular">5.0 (121 Reviews)</p>
           </div>
-          <p id="spec-price" class="Header-6-Regular spec-price">$1999.00</p>
-          <p class="Body-1-Regular spec-description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.</p>
+          <p id="spec-price" class="Header-6-Regular spec-price">${{ product.price }}</p>
+          <p class="Body-1-Regular spec-description">{{ product.description }}</p>
           <div class="spec-color-container general-grid">
             <p class="Header-7-Bold">Color</p>
             <div class="spec-color-box">
@@ -57,7 +50,7 @@
               onclick="changeProductNumber('product-num-plus')"></ion-icon>
             </div>
              <button class="add-cart-btn"
-             onclick="addCart()">Add to Cart</button>
+             onclick="addCart({{ product.id }})">Add to Cart</button>
              <ion-icon name="heart-outline"></ion-icon>
           </div>
           <div class="spec-share-box general-grid">
@@ -70,18 +63,23 @@
           </div>
         </div>
         <div class="product-imgs">
-          <div>
-            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
-          </div>
-          <div>
-            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
-          </div>
-          <div>
-            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
-          </div>
-          <div>
-            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">
-          </div>
+            {% for _ in repeat_times %}
+                <div>
+                    <img src="{{ product_images.image.url }}" alt="Image for {{ product.name }}">
+                </div>
+            {% endfor %}
+{#          <div>#}
+{#            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">#}
+{#          </div>#}
+{#          <div>#}
+{#            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">#}
+{#          </div>#}
+{#          <div>#}
+{#            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">#}
+{#          </div>#}
+{#          <div>#}
+{#            <img src="/static/img/image 20 (1).png" alt="iphone 14 pro">#}
+{#          </div>#}
         </div>
       </div>
       <div>
@@ -108,13 +106,13 @@
                 <p class="Header-7-Bold">Operating System</p>
               </div>
               <div class="info-col-2 general-grid">
-                <p class="Body-1-Regular">Apple</p>
-                <p class="Body-1-Regular">65 CM</p>
-                <p class="Body-1-Regular">31.4 CM</p>
-                <p class="Body-1-Regular">6.5 Inch</p>
-                <p class="Body-1-Regular">MF841HN/A</p>
-                <p class="Body-1-Regular">6 GB</p>
-                <p class="Body-1-Regular">ios 17</p>
+                <p class="Body-1-Regular">{{ product.brand }}</p>
+                <p class="Body-1-Regular">{{ product.item_height }} CM</p>
+                <p class="Body-1-Regular">{{ product.item_width }} CM</p>
+                <p class="Body-1-Regular">{{ product.screen_size }} Inch</p>
+                <p class="Body-1-Regular">{{ product.model_number }}</p>
+                <p class="Body-1-Regular">{{ product.ram }} GB</p>
+                <p class="Body-1-Regular">{{ product.operating_system }}</p>
               </div>
             </div>
           </div>

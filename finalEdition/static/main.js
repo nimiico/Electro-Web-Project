@@ -262,157 +262,162 @@ function colorPrice(colorIcon) {
 // //***** ADD TO CART *****//
 // /////////////////////////////////
 
-class CartProduct {
-  constructor(name, price, rate, rateCount, description, color, img, number) {
-    this.name = name;
-    this.price = price;
-    this.rate = rate;
-    this.rateCount = rateCount;
-    this.description = description;
-    this.color = color;
-    this.img = img;
-  }
-}
-
-// Default Items
-
-const cp1 = new CartProduct(
-  "Apple iPhone 14 Pro",
-  1999.0,
-  5.0,
-  121,
-  "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.",
-  "#bebec6",
-  "img/image 16 (2).png",
-  1
-);
-
-const cp2 = new CartProduct(
-  "Asus ROG Delta S",
-  250.0,
-  5.0,
-  121,
-  "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.",
-  "#bebec6",
-  "img/image 25 (2).png",
-  1
-);
-
-//Cart Product List
-var cartProductList = [];
-cartProductList.push(cp1);
-cartProductList.push(cp2);
-
-// Add to cart UI
-
-function changeProductNumber(btn) {
-  let num = document.getElementById("product-number").textContent;
-  num = parseInt(num);
-  if (btn == "product-num-plus") {
-    document.getElementById("product-number").innerHTML = `${num + 1}`;
-  }
-
-  if (btn == "product-num-minus") {
-    if (num != 0) {
-      document.getElementById("product-number").innerHTML = `${num - 1}`;
-    }
-  }
-}
-
-// function addCart() {
-//   productName = document.getElementById("product-name");
-//   productPrice = document.getElementById("spec-price");
-//   productNumber = document.getElementById("product-number");
-//   cart0 = document.getElementById("cart-item-0");
-//   cart1 = document.getElementById("cart-item-1");
-
-//   product = new CartProduct(
-//     productName,
-//     productPrice,
-//     0.0,
-//     0,
-//     null,
-//     null,
-//     "img/image 16 (2).png"
-//   );
-
-//   for (let i = 0; i < cartProductList.length; i++) {
-//     if (JSON.stringify(cartProductList[i]) === JSON.stringify(product)) {
+// class CartProduct {
+//   constructor(name, price, rate, rateCount, description, color, img, number) {
+//     this.name = name;
+//     this.price = price;
+//     this.rate = rate;
+//     this.rateCount = rateCount;
+//     this.description = description;
+//     this.color = color;
+//     this.img = img;
+//   }
+// }
+//
+// // Default Items
+//
+// const cp1 = new CartProduct(
+//   "Apple iPhone 14 Pro",
+//   1999.0,
+//   5.0,
+//   121,
+//   "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.",
+//   "#bebec6",
+//   "img/image 16 (2).png",
+//   1
+// );
+//
+// const cp2 = new CartProduct(
+//   "Asus ROG Delta S",
+//   250.0,
+//   5.0,
+//   121,
+//   "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.",
+//   "#bebec6",
+//   "img/image 25 (2).png",
+//   1
+// );
+//
+// //Cart Product List
+// var cartProductList = [];
+// cartProductList.push(cp1);
+// cartProductList.push(cp2);
+//
+// // Add to cart UI
+//
+// function changeProductNumber(btn) {
+//   let num = document.getElementById("product-number").textContent;
+//   num = parseInt(num);
+//   if (btn == "product-num-plus") {
+//     document.getElementById("product-number").innerHTML = `${num + 1}`;
+//   }
+//
+//   if (btn == "product-num-minus") {
+//     if (num != 0) {
+//       document.getElementById("product-number").innerHTML = `${num - 1}`;
 //     }
 //   }
 // }
+//
+// // function addCart() {
+// //   productName = document.getElementById("product-name");
+// //   productPrice = document.getElementById("spec-price");
+// //   productNumber = document.getElementById("product-number");
+// //   cart0 = document.getElementById("cart-item-0");
+// //   cart1 = document.getElementById("cart-item-1");
+//
+// //   product = new CartProduct(
+// //     productName,
+// //     productPrice,
+// //     0.0,
+// //     0,
+// //     null,
+// //     null,
+// //     "img/image 16 (2).png"
+// //   );
+//
+// //   for (let i = 0; i < cartProductList.length; i++) {
+// //     if (JSON.stringify(cartProductList[i]) === JSON.stringify(product)) {
+// //     }
+// //   }
+// // }
+//
+// // number of cart
+// function addCart(productId) {
+//   console.log(2)
+//   // var cartNumber = document.getElementById("number-cart").textContent;
+//   // cartNumber = parseInt(cartNumber);
+//   // var qty = document.getElementById("qty").textContent;
+//   // qty = qty.substring(5);
+//   // qty = parseInt(qty);
+//   // var productNumber = document.getElementById("product-number").textContent;
+//   // productNumber = parseInt(productNumber);
+//   // cartNumber += productNumber;
+//   // qty += productNumber;
+//   // document.getElementById("number-cart").innerHTML = cartNumber;
+//   // document.getElementById("qty").innerHTML = `QTY: ${qty}`;
+//   //
+//   // var p0 = document.getElementById("cart-item-0").textContent;
+//   // p0 = p0.substring(1);
+//   // p0 = parseFloat(p0);
+//   // p0 = 0.0;
+//   // p0 = qty * 1999.0;
+//   // document.getElementById("cart-item-0").innerHTML = `$${p0}`;
+//   //
+//   // var subtotal = document.getElementById("subtotal-price").textContent;
+//   // subtotal = subtotal.substring(1);
+//   // subtotal = parseFloat(subtotal);
+//   // subtotal = 0.0;
+//   // subtotal = 250 + p0;
+//   // document.getElementById("subtotal-price").innerHTML = `$${subtotal}`;
+// }
+//
+// //remove from cart
+// function removeCart(i) {
+//   // remove = document.getElementsByClassName("remove-cart")[i];
+//   let cartItem = document.getElementsByClassName("cart-item")[i];
+//
+//   cartItem.style.display = "none";
+//   var cartNumber = document.getElementById("number-cart").textContent;
+//   cartNumber = parseInt(cartNumber);
+//   var qty = document.getElementById("qty").textContent;
+//   qty = qty.substring(5);
+//   qty = parseInt(qty);
+//
+//   var p0 = document.getElementById("cart-item-0").textContent;
+//   p0 = p0.substring(1);
+//   p0 = parseFloat(p0);
+//
+//   var p1 = document.getElementById("cart-item-1").textContent;
+//   p1 = p1.substring(1);
+//   p1 = parseFloat(p1);
+//
+//   var subtotal = document.getElementById("subtotal-price").textContent;
+//   subtotal = subtotal.substring(1);
+//   subtotal = parseFloat(subtotal);
+//
+//   ////number of cart and subtotal price
+//   if (i == 0) {
+//     subtotal -= p0;
+//     cartNumber -= qty;
+//   } else {
+//     subtotal -= p1;
+//     cartNumber -= 1;
+//   }
+//
+//   document.getElementById("subtotal-price").innerHTML = `$${subtotal}`;
+//   document.getElementById("number-cart").innerHTML = cartNumber;
+//
+//   //item numbers in cart
+//   let itemsNum = document.getElementById("items-num").textContent;
+//   itemsNum = itemsNum.substring(0, 1);
+//   itemsNum = parseInt(itemsNum);
+//   itemsNum -= 1;
+//   document.getElementById("items-num").innerHTML = `${itemsNum} items`;
+// }
 
-// number of cart
 function addCart() {
-  var cartNumber = document.getElementById("number-cart").textContent;
-  cartNumber = parseInt(cartNumber);
-  var qty = document.getElementById("qty").textContent;
-  qty = qty.substring(5);
-  qty = parseInt(qty);
-  var productNumber = document.getElementById("product-number").textContent;
-  productNumber = parseInt(productNumber);
-  cartNumber += productNumber;
-  qty += productNumber;
-  document.getElementById("number-cart").innerHTML = cartNumber;
-  document.getElementById("qty").innerHTML = `QTY: ${qty}`;
-
-  var p0 = document.getElementById("cart-item-0").textContent;
-  p0 = p0.substring(1);
-  p0 = parseFloat(p0);
-  p0 = 0.0;
-  p0 = qty * 1999.0;
-  document.getElementById("cart-item-0").innerHTML = `$${p0}`;
-
-  var subtotal = document.getElementById("subtotal-price").textContent;
-  subtotal = subtotal.substring(1);
-  subtotal = parseFloat(subtotal);
-  subtotal = 0.0;
-  subtotal = 250 + p0;
-  document.getElementById("subtotal-price").innerHTML = `$${subtotal}`;
-}
-
-//remove from cart
-function removeCart(i) {
-  // remove = document.getElementsByClassName("remove-cart")[i];
-  let cartItem = document.getElementsByClassName("cart-item")[i];
-
-  cartItem.style.display = "none";
-  var cartNumber = document.getElementById("number-cart").textContent;
-  cartNumber = parseInt(cartNumber);
-  var qty = document.getElementById("qty").textContent;
-  qty = qty.substring(5);
-  qty = parseInt(qty);
-
-  var p0 = document.getElementById("cart-item-0").textContent;
-  p0 = p0.substring(1);
-  p0 = parseFloat(p0);
-
-  var p1 = document.getElementById("cart-item-1").textContent;
-  p1 = p1.substring(1);
-  p1 = parseFloat(p1);
-
-  var subtotal = document.getElementById("subtotal-price").textContent;
-  subtotal = subtotal.substring(1);
-  subtotal = parseFloat(subtotal);
-
-  ////number of cart and subtotal price
-  if (i == 0) {
-    subtotal -= p0;
-    cartNumber -= qty;
-  } else {
-    subtotal -= p1;
-    cartNumber -= 1;
-  }
-
-  document.getElementById("subtotal-price").innerHTML = `$${subtotal}`;
-  document.getElementById("number-cart").innerHTML = cartNumber;
-
-  //item numbers in cart
-  let itemsNum = document.getElementById("items-num").textContent;
-  itemsNum = itemsNum.substring(0, 1);
-  itemsNum = parseInt(itemsNum);
-  itemsNum -= 1;
-  document.getElementById("items-num").innerHTML = `${itemsNum} items`;
+  console.log(2);
 }
 
 // rating

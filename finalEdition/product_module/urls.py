@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('product-page', views.product_page, name='product-page'),
+    path('<slug:slug>', views.product_page, name='product-page'),
 ]

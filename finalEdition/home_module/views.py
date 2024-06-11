@@ -23,10 +23,12 @@ def index_page(request):
 
     specific_image_prefetch = Prefetch(
         'image_set',
-        queryset=Image.objects.filter(title='off-post'),  # عنوان خاص تصویر
+        queryset=Image.objects.filter(title='off-post'),
         to_attr='specific_images'
     )
 
+    banner_products = Product.objects.filter(is_banner=True).first()
+    banner_images = Image.objects.filter(product=banner_products, title='banner').first()
     discounted_products = Product.objects.filter(
         Q(discountcode__expiry_date__gt=now) &
         Q(discountcode__discount_type='percentage') |
@@ -36,16 +38,10 @@ def index_page(request):
         discount_value=Coalesce(F('discountcode__discount_amount'), 0, output_field=DecimalField()),
     ).prefetch_related(specific_image_prefetch).distinct().order_by('-discountcode__discount_amount')[:2]
 
-    for product in discounted_products:
-        print(
-            f'Product Name: {product.name}, Discount Type: {product.discount_type}, Discount Value: {product.discount_value}')
-        if product.specific_images:
-            for image in product.specific_images:
-                print(f'Image URL: {image.image.url}')
-        else:
-            print('No specific image found')
     context = {
-        'discounted_products': discounted_products
+        'discounted_products': discounted_products,
+        'banner_products': banner_products,
+        'banner_images': banner_images
     }
 
     return render(request, 'home_module/index_page.html', context)
@@ -106,7 +102,7 @@ def login_modal_component(request):
                     is_password_correct = user.check_password(user_pass)
                     if is_password_correct:
                         login(request, user)
-                        return redirect(reverse('index_page'))
+                        return render(request, 'shared/login_modal_component.html')
                     else:
                         login_form.add_error('email', 'user not founded')
             else:
@@ -127,16 +123,13 @@ def login_modal_component(request):
 
 def activate_account_view(request, email_active_code):
     if request.method == 'GET':
-        user: User = User.objects.filter(email_active_code__iexact=email_active_code).first()
+        user: User = User.objects.filter(email_active_code__exact=email_active_code).first()
         if user is not None:
             if not user.is_active:
                 user.is_active = True
                 user.email_active_code = get_random_string(72)
                 user.save()
                 return redirect(reverse('index_page'))
-            else:
-                pass
-
         raise Http404
 
 
@@ -164,6 +157,7 @@ def site_footer_component(request):
 
 
 def cart_modal_component(request):
+
     return render(request, 'shared/cart_modal_component.html')
 
 
@@ -180,13 +174,3 @@ def log_out(request):
         logout(request)
         return redirect(reverse('index_page'))
 
-#
-# def off_products(request):
-#     print(22)
-#     active_discount_codes = DiscountCode.objects.filter(expiry_date__gte=date.today())
-#
-#     discounted_products = Product.objects.filter(
-#         Q(discountcode__in=active_discount_codes)
-#     ).distinct()
-#
-#     return render(request, 'home_module/index_page.html', {'discounted_products': discounted_products})

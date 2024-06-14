@@ -38,7 +38,7 @@ class Product(models.Model):
     price_change_date = models.DateTimeField(default=timezone.now)
     visits = models.PositiveIntegerField(default=0)
     slug = models.SlugField(default="", null=False, db_index=True)
-    is_banner = models.BooleanField(default=False)
+
 
     def get_absolute_url(self):
         return reverse('product-page', args=[self.slug])
@@ -62,7 +62,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to='images/product_gallery')
 
     def __str__(self):
-        return f"Image for {self.product.name}"
+        return f"{self.title} for {self.product.name}"
 
 
 class Video(models.Model):

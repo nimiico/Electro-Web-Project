@@ -17,6 +17,8 @@ from django.utils import timezone
 from django.db.models import F, Q, DecimalField, OuterRef, Subquery, Prefetch
 from django.db.models.functions import Coalesce
 
+from .models import Hero, Banner
+
 
 def index_page(request):
     now = timezone.now()
@@ -27,8 +29,12 @@ def index_page(request):
         to_attr='specific_images'
     )
 
-    banner_products = Product.objects.filter(is_banner=True).first()
-    banner_images = Image.objects.filter(product=banner_products, title='banner').first()
+    banner_products = Banner.objects.filter(is_banner=True).first()
+    banner_images = Image.objects.filter(product=banner_products.product, title='banner').first()
+
+    hero_product = Hero.objects.filter(is_hero=True).first()
+    hero_images = Image.objects.filter(product=hero_product.product, title='hero').first()
+
     discounted_products = Product.objects.filter(
         Q(discountcode__expiry_date__gt=now) &
         Q(discountcode__discount_type='percentage') |
@@ -41,7 +47,9 @@ def index_page(request):
     context = {
         'discounted_products': discounted_products,
         'banner_products': banner_products,
-        'banner_images': banner_images
+        'banner_images': banner_images,
+        'hero_images': hero_images,
+        'hero_product': hero_product,
     }
 
     return render(request, 'home_module/index_page.html', context)
@@ -131,21 +139,6 @@ def activate_account_view(request, email_active_code):
                 user.save()
                 return redirect(reverse('index_page'))
         raise Http404
-
-
-# def signup_modal_component(request):
-#     if request.method == 'POST':
-#         register_form = RegisterForm(request.POST)
-#         if register_form.is_valid():
-#             print(register_form.cleaned_data)
-#             return redirect('index_page')
-#
-#     else:
-#         register_form = RegisterForm()
-#     context = {
-#         'register_form': register_form
-#     }
-#     return render(request, 'shared/signup_modal_component.html', context)
 
 
 def site_header_component(request):

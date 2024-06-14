@@ -5,17 +5,15 @@
       <section class="section section-hero">
         <div class="hero">
           <div class="hero-text-box">
-            <h1 class="heading-primary">Great Sound With Solo Headphone</h1>
+            <h1 class="heading-primary">{{ hero_product.header }}</h1>
             <p class="hero-description Header-7-Regular">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum.
+              {{ hero_product.description }}
             </p>
-            <a href="#" class="btn">Shop Now &rarr;</a>
+            <a href="{{ hero_product.product.get_absolute_url }}" class="btn">Shop Now &rarr;</a>
           </div>
           <div class="hero-img-box">
             <img
-              src="/static/img/young-handsome-happy-smiling-man-dancing-listening-music-headphones-isolated-white-studio-wall 1.png"
+              src="{{ hero_images.image.url }}"
               alt="Man listen to music By Headphone"
               class="hero-img"
             />
@@ -380,14 +378,14 @@
       <section class="section section-opportunity opportunity-container">
         <img
           src="{{ banner_images.image.url }}"
-          alt="iphone 13 pro"
+          alt="{{ banner_products.product.name }}"
         />
         <div class="post-content opportunity-content">
           <h3 class="Header-3-Bold post-title opportunity-title">
-              {{ banner_products.name }}
+              {{ banner_products.product.name }}
           </h3>
           <p class="Header-7-Regular post-description opportunity-description">
-            Don’t miss the last opportunity
+            {{ banner_products.description }}
           </p>
           <a href="{{ banner_products.get_absolute_url }}" class="btn opportunity-btn">Shop Now &rarr;</a>
         </div>

@@ -1,46 +1,51 @@
+
+
 <div id="cart-modal" class="cart-modal">
   <div class="cart-items-box general-grid">
     <p class="Body-1-Regular">
-      You have <span id="items-num" class="Body-1-Bold">2 items</span> in
+      You have <span id="items-num" class="Body-1-Bold">{{ total_count }} items</span> in
       your cart
     </p>
     <div class="cart-items general-grid">
-      <div class="cart-item general-grid">
-        <div class="cart-item-img">
-          <img src="/static/img/image 16 (2).png" alt="iphone 14 pro" />
-        </div>
-        <div class="cart-item-content general-grid grid--2-cols">
-          <p class="Body-2-Regular cart-item-title">Apple iPhone 14 Pro</p>
-          <p id="cart-item-0" class="Body-2-Bold">$1999.00</p>
-          <p id="qty" class="Body-2-Regular">QTY: 1</p>
-          <ion-icon
-            onclick="removeCart(0)"
-            class="remove-cart"
-            name="trash-outline"
-          ></ion-icon>
-        </div>
-      </div>
-      <div class="cart-item general-grid">
-        <div class="cart-item-img">
-          <img src="/static/img/image 25 (2).png" alt="Asus ROG Delta S" />
-        </div>
-        <div class="cart-item-content general-grid grid--2-cols">
-          <p class="Body-2-Regular cart-item-title">Asus ROG Delta S</p>
-          <p id="cart-item-1" class="Body-2-Bold">$250.00</p>
-          <p class="Body-2-Regular">QTY: 1</p>
-          <ion-icon
-            onclick="removeCart(1)"
-            class="remove-cart"
-            name="trash-outline"
-          ></ion-icon>
-        </div>
-      </div>
+        {% for detail in cart.cartitem_set.all %}
+            <div class="cart-item general-grid">
+                <div class="cart-item-img">
+                  <img src="{{ detail.product.image.url }}" alt="{{ detail.product.name }}" />
+                </div>
+                <div class="cart-item-content general-grid grid--2-cols">
+                  <p class="Body-2-Regular cart-item-title">{{ detail.product.name }}</p>
+                  <p id="cart-item-0" class="Body-2-Bold">${{ detail.product.price }}</p>
+                  <p id="qty" class="Body-2-Regular">QTY: {{ detail.count }}</p>
+                  <ion-icon
+                    onclick="removeCart(0)"
+                    class="remove-cart"
+                    name="trash-outline"
+                  ></ion-icon>
+                </div>
+              </div>
+        {% endfor %}
+
+{#      <div class="cart-item general-grid">#}
+{#        <div class="cart-item-img">#}
+{#          <img src="/static/img/image 25 (2).png" alt="Asus ROG Delta S" />#}
+{#        </div>#}
+{#        <div class="cart-item-content general-grid grid--2-cols">#}
+{#          <p class="Body-2-Regular cart-item-title">Asus ROG Delta S</p>#}
+{#          <p id="cart-item-1" class="Body-2-Bold">$250.00</p>#}
+{#          <p class="Body-2-Regular">QTY: 1</p>#}
+{#          <ion-icon#}
+{#            onclick="removeCart(1)"#}
+{#            class="remove-cart"#}
+{#            name="trash-outline"#}
+{#          ></ion-icon>#}
+{#        </div>#}
+{#      </div>#}
     </div>
   </div>
   <div class="cart-subtotal-container general-grid">
     <div class="subtotal-box general-grid grid--2-cols">
       <p class="Body-1-Bold">Subtotal</p>
-      <p id="subtotal-price" class="Body-1-Bold subtotal-price">$2249.00</p>
+      <p id="subtotal-price" class="Body-1-Bold subtotal-price">${{ sum }}</p>
     </div>
     <div class="cart-subtotal-btn-box general-grid">
       <button class="view-cart-btn">View Cart</button>

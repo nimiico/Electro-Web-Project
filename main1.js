@@ -341,33 +341,42 @@ function changeProductNumber(btn) {
 // }
 
 // number of cart
-function addCart() {
-  var cartNumber = document.getElementById("number-cart").textContent;
-  cartNumber = parseInt(cartNumber);
-  var qty = document.getElementById("qty").textContent;
-  qty = qty.substring(5);
-  qty = parseInt(qty);
-  var productNumber = document.getElementById("product-number").textContent;
-  productNumber = parseInt(productNumber);
-  cartNumber += productNumber;
-  qty += productNumber;
-  document.getElementById("number-cart").innerHTML = cartNumber;
-  document.getElementById("qty").innerHTML = `QTY: ${qty}`;
+// function addCart() {
+//   var cartNumber = document.getElementById("number-cart").textContent;
+//   cartNumber = parseInt(cartNumber);
+//   var qty = document.getElementById("qty").textContent;
+//   qty = qty.substring(5);
+//   qty = parseInt(qty);
+//   var productNumber = document.getElementById("product-number").textContent;
+//   productNumber = parseInt(productNumber);
+//   cartNumber += productNumber;
+//   qty += productNumber;
+//   document.getElementById("number-cart").innerHTML = cartNumber;
+//   document.getElementById("qty").innerHTML = `QTY: ${qty}`;
 
-  var p0 = document.getElementById("cart-item-0").textContent;
-  p0 = p0.substring(1);
-  p0 = parseFloat(p0);
-  p0 = 0.0;
-  p0 = qty * 1999.0;
-  document.getElementById("cart-item-0").innerHTML = `$${p0}`;
+//   var p0 = document.getElementById("cart-item-0").textContent;
+//   p0 = p0.substring(1);
+//   p0 = parseFloat(p0);
+//   p0 = 0.0;
+//   p0 = qty * 1999.0;
+//   document.getElementById("cart-item-0").innerHTML = `$${p0}`;
 
-  var subtotal = document.getElementById("subtotal-price").textContent;
-  subtotal = subtotal.substring(1);
-  subtotal = parseFloat(subtotal);
-  subtotal = 0.0;
-  subtotal = 250 + p0;
-  document.getElementById("subtotal-price").innerHTML = `$${subtotal}`;
+//   var subtotal = document.getElementById("subtotal-price").textContent;
+//   subtotal = subtotal.substring(1);
+//   subtotal = parseFloat(subtotal);
+//   subtotal = 0.0;
+//   subtotal = 250 + p0;
+//   document.getElementById("subtotal-price").innerHTML = `$${subtotal}`;
+// }
+
+function addProductToCart(productId) {
+  console.log(productId)
+  const productCount = $('#product-number').val()
+  $.get('?product_id=' + productId + '&count=' + productCount).then(res => {
+    console.log(res);
+  });
 }
+
 
 //remove from cart
 function removeCart(i) {

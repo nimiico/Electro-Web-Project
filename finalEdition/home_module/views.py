@@ -151,31 +151,25 @@ def site_footer_component(request):
 
 
 def cart_modal_component(request: HttpRequest):
-    current_cart, created = Cart.objects.prefetch_related(
-        Prefetch('cartitem_set',
-                 queryset=CartItem.objects.select_related('product').prefetch_related('product__image_set').all())
-    ).get_or_create(is_paid=False, user_id=request.user.id)
+    if request.user.is_authenticated:
+        current_cart, created = Cart.objects.prefetch_related('cartitem_set').get_or_create(is_paid=False, user_id=request.user.id)
 
-    total_product = 0
-    total_amount = 0
+        total_product = 0
+        total_amount = 0
 
-    for cart_detail in current_cart.cartitem_set.all():
-        total_amount += cart_detail.product.price * cart_detail.count
-        total_product += cart_detail.count
+        for cart_detail in current_cart.cartitem_set.all():
+            total_amount += cart_detail.product.price * cart_detail.count
+            total_product += cart_detail.count
 
-        product_image = cart_detail.product.image_set.filter(title='cart').first()
+        context = {
+            'cart': current_cart,
+            'sum': total_amount,
+            'total_count': total_product,
+        }
+        return render(request, 'shared/cart_modal_component.html', context)
+    else:
+        return render(request, 'shared/cart_modal_component.html')
 
-        # Add product image to context if found
-        if product_image:
-            cart_detail.product.image = product_image
-            print(cart_detail.product.image)
-
-    context = {
-        'cart': current_cart,
-        'sum': total_amount,
-        'total_count': total_product,
-    }
-    return render(request, 'shared/cart_modal_component.html', context)
 
 
 def add_to_cart(request: HttpRequest):

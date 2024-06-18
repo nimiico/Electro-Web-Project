@@ -11,9 +11,10 @@ class Category(models.Model):
     depth = models.PositiveIntegerField(default=0)
 
     def save(self, *args, **kwargs):
-        if self.parent:
-            self.depth = self.parent.depth + 1
-        super().save(*args, **kwargs)
+        if self.depth < 6:
+            if self.parent:
+                self.depth = self.parent.depth + 1
+            super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
